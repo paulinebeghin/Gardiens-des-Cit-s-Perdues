@@ -1,0 +1,43 @@
+{
+  "title": "Alden",
+  "slug": "Alden-test",
+  "category": "AUTRE",
+  "imageCard": "https://mon-site.com/images/sophie-vignette.jpg",
+  "imageFull": "https://mon-site.com/images/sophie-full.jpg",
+  "abilities": [
+    "Télépathe", 
+    "Polyglotte", 
+    "Inflicteur", 
+    "Téléporteur", 
+    "Optimisateur"
+  ],
+  "family": [
+    "Grady Ruewen (père adoptif)", 
+    "Edaline Ruewen (mère adoptive)", 
+    "Amy Foster (sœur humaine)"
+  ],
+  "content": [
+    "Sophie Foster est une jeune fille dotée de capacités extraordinaires qui découvre qu'elle appartient au monde des Elfes.",
+    "Elle possède des gènes modifiés par le projet Cygne Noir, lui donnant plus de talents que n'importe quel autre Elfe.",
+    "Elle réside actuellement à Havenfield avec ses parents adoptifs et son Allicorne, Silveny."
+  ]
+}
+
+
+
+{
+  "title": "Marella Redek",
+  "slug": "marella-redek",
+  "category": "PROTAGONISTES",
+  "imageCard": "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772125812/CategorieMarellaRedek_dehtot.png",
+  "imageFull": "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772125817/MarellaRedek_fpyini.png",
+  "abilities": [
+    "Hydrokinésiste"
+  ],
+  "family": [
+    "Mai, Quan et Tam Song" 
+  ],
+  "content": [
+    "Marella Adene Redek, fille de Caprise et Durand Redek, est une elfe membre du Cygne Noir. Malgré le fait qu'elle soit une des premières rencontres de Sophie Foster, cette dernière s'éloigne d'elle lors de son intégration au Cygne Noir pour finalement revenir plus tard, lorsque Marella, à son tour, décide d'intégrer l'organisation après s'être révélée Pyrokinésiste, et ainsi, Sans-Talent, à son plus grand regret."
+  ]
+}

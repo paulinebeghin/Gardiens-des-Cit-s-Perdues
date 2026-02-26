@@ -10,6 +10,15 @@ interface Character {
   category: string;
 }
 
+//choisir l'ordre
+const CATEGORY_PRIORITY: Record<string, number> = {
+  "PROTAGONISTES": 1,
+  "ANTAGONISTES" : 2,
+  "CONSEIL": 3,
+  "CYGNE_NOIR": 4,
+  "MENTOR": 5,
+  "AUTRE": 6
+};
 export const AllCategoriesPage = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
 
@@ -26,37 +35,54 @@ export const AllCategoriesPage = () => {
   }, []);
 
 
-  //Crée une liste de catégories uniques (new Set)
-  const categories = [...new Set(characters.map(char => char.category))];
 
+// Liste unique de categoris + avec ordre choisie
+const categories = [...new Set(characters.map(char => char.category))]
+  .sort((a, b) => {
+    // On récupère le numéro de priorité (ou 99 si la catégorie n'est pas dans la liste)
+    const priorityA = CATEGORY_PRIORITY[a] || 99;
+    const priorityB = CATEGORY_PRIORITY[b] || 99;
+    
+    return priorityA - priorityB;
+  });
   return (
-    <div className="max-w-7xl mx-auto p-8 space-y-16">
-      <h1 className="text-5xl font-black text-center mb-12">L'Encyclopédie des Cités</h1>
+    <div>
+
+      <h1 className="text-5xl text-[48px] md:text-[128px] text-center mb-12">Personnages</h1>
+
+    <div className="max-w-[1440px]  flex flex-col gap-14 p-12  border border-white rounded-[48px] ">
 
         {/* ///Elle crée une <section> pour chaque groupe (ex: Une section pour le "Cygne Noir", une pour le "Conseil"). */}
       {categories.map(cat => (
-        <section key={cat} className="space-y-6">
+      <section key={cat} className="flex flex-col max-md:grid gap-14">
+
           {/* Titre de la catégorie */}
-          <div className="flex items-center gap-4">
-            <h2 className="text-3xl font-bold text-red-700 uppercase tracking-tighter">
+          <div className="flex items-center ">
+            <p className="font-bold text-slate-900 py-5 px-7 tracking-tighter  bg-white/90 rounded-full">
+
                {/* Ça transforme CYGNE_NOIR en CYGNE NOIR. */}
               {cat.replace('_', ' ')}  
-            </h2>
-            <div className="h-1 flex-1 bg-gray-200 rounded-full"></div>
+            </p> 
+
           </div>
 
           {/* Grille des personnages pour CETTE catégorie */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {characters
-            // À l'intérieur de la section "Conseil", on ne garde que les personnages dont la catégorie est "Conseil".
-              .filter(char => char.category === cat)
-              .map(char => (
-                // Pour chacun de ces personnages filtrés, on affiche une CharacterCard.
-                <CharacterCard key={char.id} character={char} />
-              ))}
-          </div>
+
+          <div className="flex flex-nowrap overflow-x-auto  
+                  md:flex-wrap md:overflow-visible 
+                  scrollbar-hide"> 
+    {characters
+      .filter(char => char.category === cat)
+      .map(char => (
+        // min-w-[250px] est crucial pour que les cartes ne s'écrasent pas sur mobile
+        <div key={char.id} className="min-w-[280px] md:min-w-0">
+          <CharacterCard character={char} />
+        </div>
+      ))}
+  </div>
         </section>
       ))}
+    </div>
     </div>
   );
 };

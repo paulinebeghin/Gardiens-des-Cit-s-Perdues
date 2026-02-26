@@ -8,10 +8,10 @@ export const LinksHome = [
             alt : "Image représentant les prestations du CIMAP"
         },
         {
-            button : <ButtonCategorieHome name="Livre" url="/pages/tarifs" urlImg={"https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772107051/img-1_ojydaf.png"} alt={""} />,
+            button : <ButtonCategorieHome name="Livre" url="/pages/tarifs" urlImg={"https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772107051/img-1_ojydaf.png"} alt={"Illustration de bibliothèque"} />,
         },
         {
-            button : <ButtonCategorieHome name="Univers" url="/univers" urlImg={"https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772109768/img_dcmos6.png"} alt={""} />,
+            button : <ButtonCategorieHome name="Univers" url="/univers" urlImg={"https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772109768/img_dcmos6.png"} alt={"Illustration de la carte Gardien des cités perdues"} />,
             alt : "Image représentant les actualités du CIMAP"
         }, 
     ]

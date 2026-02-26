@@ -15,22 +15,21 @@ interface CharacterProps {
 export const CharacterCard = ({ character }: CharacterProps) => (
   <Link 
     to={`/personnage/${character.slug}`} 
-    className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100 block"
+    className="group bg-white/80 rounded-2xl py-7 px-4 grid gap-5 overflow-hidden  w-50 "
   >
-    <div className="aspect-[4/5] overflow-hidden bg-gray-200">
+    <div className="overflow-hidden border border-sky-700 rounded-full ">
       <img 
         src={character.imageCard} 
         alt={character.title} 
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
       />
     </div>
-    <div className="p-4 bg-white">
-      <h3 className="text-xl font-bold text-gray-800 group-hover:text-red-600 transition-colors">
+    <div className="text-sm text-center">
+      <p className='font-bold text-sky-700'>Nom</p>
+      <p className="text-slate-900">
         {character.title}
-      </h3>
-      <p className="text-xs text-gray-500 uppercase tracking-widest mt-1">
-        {character.category}
       </p>
+      
     </div>
   </Link>
 );

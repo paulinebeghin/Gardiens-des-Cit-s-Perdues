@@ -32,9 +32,9 @@ model Page {
 
 enum Category {
   CYGNE_NOIR
-  INVISIBLES
+  ANTAGONISTES
   CONSEIL
-  NOBLESSE
+  MENTOR
   PROTAGONISTES
   AUTRE
 }

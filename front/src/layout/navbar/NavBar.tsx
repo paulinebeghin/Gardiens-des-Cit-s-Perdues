@@ -9,18 +9,26 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className={`${isOpen ? 'bg-transparent' : 'bg-white/90 '}
-    px-7 py-2.5 md:py-5 rounded-full w-full max-w-7xl `}>
-    <div className="flex items-center justify-center gap-16">
+    <nav className={`${isOpen ? 'bg-transparent' : 'bg-white/90  '}
+    px-7 py-2.5 md:py-5 rounded-full w-full max-w-[1440px] `}>
+    <div className="flex items-center max-md:justify-between justify-center items-center gap-16">
         
-        {/* LOGO */}
-        <Link to="/" className="h-full"><img src="https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772092672/logoNav_rk9sea.png" alt="" /></Link>
+        {/* LOGO BASE*/}
+        <Link 
+  to="/" 
+  className={`h-full  ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+>
+  <img 
+    src="https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772092672/logoNav_rk9sea.png" 
+    alt="Logo" 
+  />
+</Link>
 
         {/* BOUTON BURGER */}
         <button 
           onClick={() => setIsOpen(!isOpen)} 
           
-          className="md:hidden p-2  focus:outline-none absolute top-9 right-10 z-[60]  text-sky-700"
+          className="md:hidden p-2  focus:outline-none absolute top-10 right-10 z-[60]  text-sky-700"
         >
           <div className="space-y-1.5">
             {/* On utilise 'isOpen' (la variable) et pas 'open()' */}
@@ -30,20 +38,36 @@ const NavBar = () => {
           </div>
         </button>
 
-        {/* LIENS (Desktop) */}
+        {/* NAV LINK */}
         <div className="hidden md:flex space-x-6">
           <Nav color={false} />
         </div>
       </div>
 
       <div className={`${isOpen ? 'flex' : 'hidden'} md:hidden fixed inset-0 z-50 justify-end`}>
-        <div className=" relative flex text-red-50 h-screen w-1/2 bg-white/90 ">
+  
+  {/* MENU BURGER OPEN */}
+  <div className="relative flex flex-col h-screen w-2/3 py-30 sm:w-1/3 bg-white/95 shadow-2xl animate-in slide-in-from-right duration-300">
+    
+    {/* --- AJOUT DU LOGO ICI --- */}
+    <div className="flex justify-center border-b  border-gray-100">
+      <Link to="/" onClick={() => setIsOpen(false)}>
+        <img 
+          src="https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772092672/logoNav_rk9sea.png" 
+          alt="Logo" 
+          className="h-10 w-auto" // Ajuste la taille selon ton logo
+        />
+      </Link>
+    </div>
 
-          <Nav 
-            onClick={() => setIsOpen(false)}
-            style="flex flex-col gap-4  p-4 pt-20 !text-red-50 [&_a]:text-sky-700 text-right h-screen " color={false}          />
-        </div>
-      </div>
+    {/* Tes liens de navigation */}
+    <Nav 
+      onClick={() => setIsOpen(false)}
+      style="flex flex-col gap-6 p-10 text-right font-bold text-sky-900" 
+      color={false} 
+    />
+  </div>
+</div>
     </nav>
   );
 }

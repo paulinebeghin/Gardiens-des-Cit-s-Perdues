@@ -35,7 +35,7 @@ export const Nav = ({ children, color, onClick, style }: NavProps) => {
    return (
     <nav className="w-full md:w-auto   ">
 
-      <ul className={`flex items-center  md:gap-10 ${color? 'text-white' : 'text-sky-700'}  ${style}`}>
+      <ul className={`flex items-center  md:gap-10 ${color? 'text-white' : 'text-slate-900'}  ${style}`}>
         {links.map((link, index) => (
           <LinkNav key={index} text={link.text} onClick={onClick} link={link.link}  />
         ))}
