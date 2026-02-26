@@ -7,6 +7,9 @@ const router: Router = express.Router();
 router.get('/', async (req: Request, res: Response) => {
   try {
     const pages = await db.page.findMany({
+      orderBy: {
+        title: 'asc' // 'asc' = ascendant (A-Z), 'desc' = descendant (Z-A)
+      },
       select: {
         id: true,
         title: true,
@@ -20,6 +23,30 @@ router.get('/', async (req: Request, res: Response) => {
   } catch (error) {
     console.error("Erreur GET ALL:", error);
     return res.status(500).json({ error: "Erreur lors de la récupération" });
+  }
+});
+
+router.get('/category/:catName', async (req, res) => {
+  const { catName } = req.params;
+  try {
+    const pages = await db.page.findMany({
+      where: { 
+        category: catName.toUpperCase() as any // On force en majuscules pour l'Enum
+      },
+      orderBy: {
+        title: 'asc' // 'asc' = ascendant (A-Z), 'desc' = descendant (Z-A)
+      },
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        imageCard: true,
+        category: true
+      }
+    });
+    res.json(pages);
+  } catch (error) {
+    res.status(500).json({ error: "Erreur lors du filtrage" });
   }
 });
 
@@ -55,10 +82,11 @@ router.post('/', async (req: Request, res: Response) => {
     });
     return res.status(201).json(newPage);
   } catch (error: any) {
+    console.error("DEBUG PRISMA ERROR:", error); // Ajoute cette ligne !
     if (error.code === 'P2002') {
       return res.status(400).json({ error: "Ce slug est déjà utilisé." });
     }
-    return res.status(500).json({ error: "Erreur lors de la création." });
+    return res.status(500).json({ error: "Erreur lors de la création.", message: error.message });
   }
 });
 
@@ -77,5 +105,26 @@ router.patch('/:slug', async (req: Request, res: Response) => {
     return res.status(500).json({ error: "Erreur lors de la modification" });
   }
 });
+
+router.delete("/:slug", async (req : Request, res : Response) => {
+    try{
+        const slug = req.params.slug as string;
+
+        const existing = await db.page.findUnique({
+            where: { slug: slug },
+        });
+        if(!existing){
+
+            return res.status(404).json({message : "Tarif not found"})
+        }
+
+        await db.page.delete({
+            where: { slug: slug },
+        })
+        res.status(204).json("Le personnage est supprimée avec succès");
+    } catch(error){
+        res.status(500).json({message : "Error server", error});
+    }
+})
 
 export default router;

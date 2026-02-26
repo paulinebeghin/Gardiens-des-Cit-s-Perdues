@@ -1,72 +1,68 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
 import React, { type ReactNode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom' 
 import './index.css' 
+
+// Tes Imports de pages
 import CharacterPage from './pages/PersonnagePage/CharacterPage.tsx'
+import { CategoryPage } from './pages/categoriePersonnage/CategorieCharacterPage.tsx'
+import { AllCategoriesPage } from './pages/allCategorie/AllCategoriesPage.tsx'
+import Layout from './layout/Layout.tsx'
+import { Home } from './pages/home/Home.tsx'
 
-
+// Système de protection de route
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   const isAuthenticated = localStorage.getItem('userToken') ? true : false;
-
   if (!isAuthenticated) {
     return <Navigate to="/connexion" replace />;
   }
-
   return <>{children}</>;
 };
 
+// Définition du Router
 const router = createBrowserRouter([
   {
-    element:"" ,
+    element: <Layout />, // Le Layout contient ta Navbar et l'Outlet pour les pages
     children: [
       {
-        path: "/", // Utilise "/" pour la page d'accueil par défaut
-        element: ""
+        path: "/",
+        element: <Home />
       },
       {
-        path: "/home",
-        element: "<Home />"
+        path: "/categorie", 
+        element: <AllCategoriesPage />
       },
       {
-        path: "/prestations/", 
-        element: ""
+        path: "/categorie/:catName", // Décommenté pour que tes boutons fonctionnent !
+        element: <CategoryPage />
       },
-        {
-          path: "/personnage/:slug", // Utilise ":slug" pour les routes dynamiques
-          element: <CharacterPage/>
-        },
-       
-        {
-          path: "*",
-          element: "", 
-        },
-       
-        {
-          path: "/contact",
-          element: ""
-        },
-        {
-          path: "/homepage",
-          element: <ProtectedRoute>""</ProtectedRoute>, 
-        },
-      
+      {
+        path: "/personnage/:slug",
+        element: <CharacterPage />
+      },
+      {
+        path: "/contact",
+        element: <div className="p-10">Page Contact (En construction)</div>
+      },
+      {
+        path: "/univers",
+        element: <div className="p-10">L'Univers des Cités (En construction)</div>
+      },
+      {
+        path: "/homepage-privee", // Changé le nom pour éviter la confusion avec Home
+        element: <ProtectedRoute><div className="p-10">Espace Privé</div></ProtectedRoute>, 
+      },
+      {
+        path: "*", // Page 404
+        element: <div className="p-10 text-center text-2xl">Oups ! Cette page n'existe pas.</div>, 
+      }
     ]
   }
 ])
 
+// Un seul rendu final
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    {/* Remplace BrowserRouter + App par RouterProvider */}
     <RouterProvider router={router} />
   </React.StrictMode>
 )
