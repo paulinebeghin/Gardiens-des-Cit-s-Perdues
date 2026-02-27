@@ -9,7 +9,7 @@ interface NavProps {
     color : boolean
 }
 
-export const Nav = ({ children, color, onClick, style }: NavProps) => {
+export const Nav = ({ color, onClick, style }: NavProps) => {
     const links = [
         {
             text: "Accueil",
@@ -17,7 +17,7 @@ export const Nav = ({ children, color, onClick, style }: NavProps) => {
         },
         {
             text: "Personnages",
-            link : "/prestations"
+            link : "/categorie"
         },
         {
             text: "Livres",

@@ -50,7 +50,7 @@ const categories = [...new Set(characters.map(char => char.category))]
 
       <h1 className="text-5xl text-[48px] md:text-[128px] text-center mb-12">Personnages</h1>
 
-    <div className="max-w-[1440px]  flex flex-col gap-14 p-12  border border-white rounded-[48px] ">
+    <div className="max-w-360  flex flex-col gap-14 p-12  border border-white rounded-[48px] ">
 
         {/* ///Elle crée une <section> pour chaque groupe (ex: Une section pour le "Cygne Noir", une pour le "Conseil"). */}
       {categories.map(cat => (
@@ -58,7 +58,7 @@ const categories = [...new Set(characters.map(char => char.category))]
 
           {/* Titre de la catégorie */}
           <div className="flex items-center ">
-            <p className="font-bold text-slate-900 py-5 px-7 tracking-tighter  bg-white/90 rounded-full">
+            <p className="font-bold text-slate-900 py-5 px-7  tracking-tighter  bg-white/90 rounded-full">
 
                {/* Ça transforme CYGNE_NOIR en CYGNE NOIR. */}
               {cat.replace('_', ' ')}  
@@ -68,14 +68,14 @@ const categories = [...new Set(characters.map(char => char.category))]
 
           {/* Grille des personnages pour CETTE catégorie */}
 
-          <div className="flex flex-nowrap overflow-x-auto  
-                  md:flex-wrap md:overflow-visible 
+          <div className="flex flex-nowrap overflow-x-auto   
+                  md:flex-wrap md:overflow-visible gap-7
                   scrollbar-hide"> 
     {characters
       .filter(char => char.category === cat)
       .map(char => (
         // min-w-[250px] est crucial pour que les cartes ne s'écrasent pas sur mobile
-        <div key={char.id} className="min-w-[280px] md:min-w-0">
+        <div key={char.id} className="">
           <CharacterCard character={char} />
         </div>
       ))}
@@ -86,3 +86,5 @@ const categories = [...new Set(characters.map(char => char.category))]
     </div>
   );
 };
+
+// md:min-w-0 min-w-[280px]
