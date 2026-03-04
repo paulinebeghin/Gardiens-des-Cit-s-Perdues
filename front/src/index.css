@@ -124,19 +124,15 @@ body {
   font-display: swap;
 }
 @font-face {
-    font-family: 'District';
-    /* Priorité au format le plus léger (woff2) */
-    src: url('/font/District.woff2') format('woff2'),
-         url('/font/District.woff') format('woff'),
-         url('/font/District.otf') format('opentype');
-    font-style: normal;
-    font-weight: 500; /* Ou 'normal' selon ton fichier */
-    font-display: swap; /* Évite que le texte soit invisible pendant le chargement */
-    text-rendering: optimizeLegibility;
+  font-family: "Cinzel";
+  src: url("/font/CinzelDecorative-Bold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 h1 {
-    font-family: 'District', sans-serif;
+    font-family: 'Cinzel', sans-serif;
     color: white;
     /* Un petit bonus pour rendre le blanc plus "propre" sur fond sombre */
     -webkit-font-smoothing: antialiased;

@@ -16,10 +16,10 @@ const CharacterPage = () => {
 return (
 <div className="flex flex-col items-center w-full">
   {/* Titre */}
-  <h1 className="text-5xl md:text-[128px] text-center mb-12">{character.title}</h1>
+  <h1 className="text-6xl max-sm:text-3xl text-center text-white py-10">{character.title}</h1>
 
   {/* Conteneur Blanc - max-w doit correspondre à celui de la navbar */}
-  <div className="w-full max-w-[1440px] bg-white/80 rounded-[48px] p-8 md:p-12 flex flex-col items-center gap-14">
+  <div className="w-full max-w-360 bg-white/80 rounded-[48px] p-8 md:p-12 flex flex-col items-center gap-14">
     
     {/* Image de l'avatar */}
     <div className="overflow-hidden rounded-full border-2 border-sky-700 w-full max-w-139.75 ">
@@ -41,7 +41,7 @@ return (
       <div className="md:col-span-4 flex flex-col gap-4">
         <div>
           <p className="font-bold text-sky-700 uppercase tracking-wide">Nom</p>
-          <p className="text-lg text-slate-900">{character.title}</p>
+          <p className="text-sm text-slate-900">{character.title}</p>
         </div>
         
         <div className="flex flex-col gap-1">

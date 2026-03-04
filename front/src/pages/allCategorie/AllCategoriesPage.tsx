@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { CharacterCard } from '../../components/CharacterCard';
+import { Header } from '../../components/Header';
 
 //Les élement qui vont êtres utiliser
 interface Character {
@@ -48,7 +49,7 @@ const categories = [...new Set(characters.map(char => char.category))]
   return (
     <div>
 
-      <h1 className="text-5xl text-[48px] md:text-[128px] text-center mb-12">Personnages</h1>
+      <Header name={'Personnages'}></Header>
 
     <div className="max-w-360  flex flex-col gap-14 p-12  border border-white rounded-[48px] ">
 

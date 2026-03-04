@@ -2,8 +2,10 @@ import pagesRouter from "@/routes/pages";
 import express, {Request, Response} from 'express';
 import cors from "cors";
 import db from '@/lib/db';
-
-
+import contactRouter from "@/routes/contact.route";
+import dotenv from 'dotenv';
+// On charge les variables d'environnement AVANT tout le reste
+dotenv.config();
 const app = express();
 const port = 3000;
 
@@ -22,7 +24,7 @@ app.get("/", (req : Request, res : Response) => {
 });
 
 app.use("/api/pages", pagesRouter);
-
+app.use("/contact", contactRouter);
 
 
 app.listen(port, async () => {

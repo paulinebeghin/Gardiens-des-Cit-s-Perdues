@@ -26,18 +26,18 @@
 
 
 {
-  "title": "Marella Redek",
-  "slug": "marella-redek",
-  "category": "PROTAGONISTES",
-  "imageCard": "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772125812/CategorieMarellaRedek_dehtot.png",
-  "imageFull": "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772125817/MarellaRedek_fpyini.png",
+  "title": "Brant",
+  "slug": "brant",
+  "category": "ANTAGONISTES",
+  "imageCard": "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772464934/CategorieCadfael_swj9xt.png",
+  "imageFull": "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772464931/Cadfael_t5d2jk.png",
   "abilities": [
-    "Hydrokinésiste"
+    ""
   ],
   "family": [
-    "Mai, Quan et Tam Song" 
+    "Cadfael était le conjoint de Romhilda," 
   ],
   "content": [
-    "Marella Adene Redek, fille de Caprise et Durand Redek, est une elfe membre du Cygne Noir. Malgré le fait qu'elle soit une des premières rencontres de Sophie Foster, cette dernière s'éloigne d'elle lors de son intégration au Cygne Noir pour finalement revenir plus tard, lorsque Marella, à son tour, décide d'intégrer l'organisation après s'être révélée Pyrokinésiste, et ainsi, Sans-Talent, à son plus grand regret."
+    "Cadfael était un Mercadir ogre, il s'est beaucoup entraîné auparavant avec Ro et il a un niveau de combat égal à celui de cette dernière. Cependant, après avoir réalisé que son titre ne lui conférait aucun pouvoir, il trahit Dimitar pour entrer dans les rangs des Invisibles."
   ]
 }

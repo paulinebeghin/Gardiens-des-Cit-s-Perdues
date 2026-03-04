@@ -9,6 +9,12 @@ import { CategoryPage } from './pages/categoriePersonnage/CategorieCharacterPage
 import { AllCategoriesPage } from './pages/allCategorie/AllCategoriesPage.tsx'
 import Layout from './layout/Layout.tsx'
 import { Home } from './pages/home/Home.tsx'
+import { Univer } from './pages/univer/Univer.tsx'
+
+import { CatalogueBook } from './pages/book/CatalogueBook.tsx'
+import { BookDetailPage } from './pages/book/Book.tsx'
+import ContactPage from './pages/contact/ContactPages.tsx'
+import NotFound from './pages/404/404NotFound.tsx'
 
 // Système de protection de route
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
@@ -40,21 +46,27 @@ const router = createBrowserRouter([
         path: "/personnage/:slug",
         element: <CharacterPage />
       },
-      {
-        path: "/contact",
-        element: <div className="p-10">Page Contact (En construction)</div>
-      },
+     
       {
         path: "/univers",
-        element: <div className="p-10">L'Univers des Cités (En construction)</div>
+        element: <Univer/>
       },
       {
-        path: "/homepage-privee", // Changé le nom pour éviter la confusion avec Home
-        element: <ProtectedRoute><div className="p-10">Espace Privé</div></ProtectedRoute>, 
+        path: "/livres",
+        element: <CatalogueBook/>
       },
+      {
+        path: "/livres/:id",
+        element: <BookDetailPage/>
+      },
+      {
+        path: "/contact",
+        element: <ContactPage/>
+      },
+      
       {
         path: "*", // Page 404
-        element: <div className="p-10 text-center text-2xl">Oups ! Cette page n'existe pas.</div>, 
+        element: <NotFound/>, 
       }
     ]
   }

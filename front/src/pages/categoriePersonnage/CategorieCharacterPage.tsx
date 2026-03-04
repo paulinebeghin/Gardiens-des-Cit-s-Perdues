@@ -24,9 +24,9 @@ interface Character {
 
   return (
     <div className="max-w-7xl mx-auto p-8">
-      <h1 className="text-4xl font-extrabold text-gray-900 mb-8 border-l-8 border-red-600 pl-4 uppercase">
-        {catName?.replace('_', ' ')}
+      <h1 className="text-6xl max-sm:text-3xl text-center text-white py-10 uppercase">
       </h1>
+        {catName?.replace('_', ' ')}
 
       {characters.length === 0 ? (
         <p className="text-gray-500">Aucun personnage dans cette catégorie pour le moment.</p>

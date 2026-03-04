@@ -33,8 +33,9 @@ model Page {
 enum Category {
   CYGNE_NOIR
   ANTAGONISTES
-  CONSEIL
+  CONSEILS
   MENTOR
   PROTAGONISTES
   AUTRE
 }
+

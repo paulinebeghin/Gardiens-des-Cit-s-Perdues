@@ -21,11 +21,11 @@ export const Nav = ({ color, onClick, style }: NavProps) => {
         },
         {
             text: "Livres",
-            link : "/pages/tarifs"
+            link : "/livres"
         },
         {
             text: "Univers",
-            link : "/pages/actus"
+            link : "/univers"
         },
         {
             text: "Contact",

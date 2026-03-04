@@ -10,7 +10,7 @@ const NavBar = () => {
 
   return (
     <nav className={`${isOpen ? 'bg-transparent' : 'bg-white/90  '}
-    px-7 py-2.5 md:py-5 rounded-full w-full max-w-360 `}>
+    px-7 py-2.5 md:py-5 rounded-full w-full max-w-[1440px] `}>
     <div className="flex items-center max-md:justify-between justify-center gap-16">
         
         {/* LOGO BASE*/}
@@ -19,7 +19,7 @@ const NavBar = () => {
   className={`h-full  ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
 >
   <img 
-    src="https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772092672/logoNav_rk9sea.png" 
+    src="https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772455462/LogoNav_t1ak6g.png" 
     alt="Logo" 
   />
 </Link>
