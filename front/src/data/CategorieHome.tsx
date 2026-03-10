@@ -4,7 +4,7 @@ import { ButtonCategorieHome } from "../ui/ButtonCategorieHome"
 
 export const LinksHome = [
         {
-            button : <ButtonCategorieHome name="Personnages" url="/categorie" urlImg={"https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772552151/personnage_fvulah.png"} alt={"illustration d'un portrait de femme de profil en ligne noir"} />,
+            button : <ButtonCategorieHome name="Personnages" url="/personnages" urlImg={"https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772552151/personnage_fvulah.png"} alt={"illustration d'un portrait de femme de profil en ligne noir"} />,
             
         },
         {

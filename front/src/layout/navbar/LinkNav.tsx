@@ -6,17 +6,17 @@ interface Props {
     onClick?: () => void;
 }
 
-export const LinkNav = ({text, link, onClick} : Props) => {
+export const LinkNav = ({ text, link, onClick }: any) => {
   return (
     <li>
-        {/* On ajoute className="block" pour cliquer plus facilement et la couleur héritée */}
-        <Link 
-            to={link} 
-            onClick={onClick} 
-            className="hover:opacity-70 font-semibold transition-opacity"
-        >
-            {text}
-        </Link>
+      <Link 
+        to={link} 
+        onClick={onClick}
+       
+        className={`transition-colors hover:text-sky-700 font-semibold duration-200 `}
+      >
+        {text}
+      </Link>
     </li>
-  )
+  );
 }

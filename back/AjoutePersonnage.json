@@ -26,18 +26,18 @@
 
 
 {
-  "title": "Brant",
-  "slug": "brant",
-  "category": "ANTAGONISTES",
-  "imageCard": "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772464934/CategorieCadfael_swj9xt.png",
-  "imageFull": "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772464931/Cadfael_t5d2jk.png",
+  "title": "Quinlin Sonden",
+  "slug": "quinlin-sonden",
+  "category": "FIGURANTS_ACTIFS",
+  "imageCard": "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1773050847/CategorieQuinlin_u4hp1s.png",
+  "imageFull": "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1773050843/Quinlin_pxmnzp.png",
   "abilities": [
-    ""
+    "Télépathe"
   ],
   "family": [
-    "Cadfael était le conjoint de Romhilda," 
+    "Aucune famille connu"
   ],
   "content": [
-    "Cadfael était un Mercadir ogre, il s'est beaucoup entraîné auparavant avec Ro et il a un niveau de combat égal à celui de cette dernière. Cependant, après avoir réalisé que son titre ne lui conférait aucun pouvoir, il trahit Dimitar pour entrer dans les rangs des Invisibles."
+    "Quinlin Sonden est un personnage secondaire de Gardiens des Cités Perdues. C'est un Télépathe qui a sondé Sophie Foster lors de son arrivée dans les Cités perdues.","Alden amène Sophie Foster chez Quinlin pour qu'il la sonde. En effet, en tant que Mentaliste en Chef, il est le plus apte à y parvenir, selon le père de Fitz Vacker. Cependant, n'ayant pas réussi, le Télépathe est particulièrement bouleversé. Puis, lorsqu'il apprend que la jeune fille habitait à San Diego, dans la zone des feux blancs, il pousse un cri de surprise. Alden est lui aussi surpris étant donné qu'il pensait que le journal de San Diego provenait de son ami. Après cette révélation, ils émettent diverses hypothèses concernant l'identité de l'expéditeur."
   ]
 }

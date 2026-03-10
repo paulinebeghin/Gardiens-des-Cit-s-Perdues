@@ -1,29 +1,19 @@
-import React, { type ReactNode } from 'react'
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom' 
-import './index.css' 
 
+import ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom' 
+import './index.css' 
 // Tes Imports de pages
 import CharacterPage from './pages/PersonnagePage/CharacterPage.tsx'
-import { CategoryPage } from './pages/categoriePersonnage/CategorieCharacterPage.tsx'
+
 import { AllCategoriesPage } from './pages/allCategorie/AllCategoriesPage.tsx'
 import Layout from './layout/Layout.tsx'
 import { Home } from './pages/home/Home.tsx'
 import { Univer } from './pages/univer/Univer.tsx'
-
 import { CatalogueBook } from './pages/book/CatalogueBook.tsx'
 import { BookDetailPage } from './pages/book/Book.tsx'
 import ContactPage from './pages/contact/ContactPages.tsx'
 import NotFound from './pages/404/404NotFound.tsx'
-
-// Système de protection de route
-const ProtectedRoute = ({ children }: { children: ReactNode }) => {
-  const isAuthenticated = localStorage.getItem('userToken') ? true : false;
-  if (!isAuthenticated) {
-    return <Navigate to="/connexion" replace />;
-  }
-  return <>{children}</>;
-};
+import React from 'react'
 
 // Définition du Router
 const router = createBrowserRouter([
@@ -35,12 +25,8 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/categorie", 
+        path: "/personnages", 
         element: <AllCategoriesPage />
-      },
-      {
-        path: "/categorie/:catName", // Décommenté pour que tes boutons fonctionnent !
-        element: <CategoryPage />
       },
       {
         path: "/personnage/:slug",

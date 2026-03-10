@@ -182,8 +182,8 @@ export const BOOKS_DATA: Book[] = [
       },
       excerptUrl: "",
       summary: "",
-      coverImage: "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772189700/T1_eykf7c.png",
-      coverImageCategorie: "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772189704/T1Categorie_r5mpow.png",
+      coverImage: "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1773074282/T10_xqm9ro.png",
+      coverImageCategorie: "https://res.cloudinary.com/dxtfa4bcx/image/upload/v1773074282/T10_xqm9ro.png",
     },
     
 ];

@@ -3,12 +3,33 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  /* Remplace l'URL par le lien de ton image */
   background-image: url('https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772093508/abstract-composition-wallpaper-background-concept_bpyyqa.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* L'image reste fixe quand on scrolle */
   background-repeat: no-repeat;
+}
+
+.star-particle {
+  position: fixed;
+  pointer-events: none; /* Pour ne pas bloquer les clics sur les cartes */
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  z-index: 9999;
+  animation: fall-and-fade 2s linear forwards;
+}
+
+@keyframes fall-and-fade {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    /* L'étoile tombe un peu et s'éloigne pour faire l'effet filant */
+    transform: translate(-20px, 50px) scale(0);
+  }
 }
 
 @font-face {

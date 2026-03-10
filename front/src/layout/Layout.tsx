@@ -1,11 +1,12 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "./navbar/NavBar";
 import Footer from "./footer/Footer";
+import { MouseTrailer } from "../components/MousseTrailer";
 
 const Layout = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-5">
-      
+      <MouseTrailer/>
       {/* NAVBAR */}
       <div className="fixed top-0 left-0 w-full z-50 flex justify-center p-5 ">
         <NavBar />

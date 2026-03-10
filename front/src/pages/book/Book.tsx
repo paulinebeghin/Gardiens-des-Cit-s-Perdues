@@ -36,11 +36,13 @@ export const BookDetailPage = () => {
           <img src={book.coverImage} alt={book.title} className="cover rounded-2xl " />
         </div>
 
-        {/* Colonne 2: Infos */}
        {/* Colonne 2: Infos */}
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold text-sky-700 uppercase">{book.title}</h2>
-            <div className="space-y-2">
+            <div className="font-bold text-sky-700 ">
+            <h2>{book.title}</h2>
+            <p>{book.subtitle}</p>
+            </div>
+            <div className="space-y-2 text-sm">
               {book.releaseDates.grandFormat && (
                 <p className="text-slate-900"><span className='font-semibold'>Grand format (Lumen) :</span> {book.releaseDates.grandFormat}</p>
               )}
@@ -55,7 +57,7 @@ export const BookDetailPage = () => {
             <div className="mt-4">
               <button 
                 onClick={() => setIsReaderOpen(true)}
-                className="text-white text-sm bg-slate-900/50 px-3 py-1 rounded-full transition-all transform hover:bg-slate-900"
+                className="text-white text-sm bg-slate-900/50 px-3 py-1 rounded-full transition-all transform hover:bg-sky-700"
               >
                 Lire un extrait
               </button>
@@ -64,8 +66,8 @@ export const BookDetailPage = () => {
 
         {/* Colonne 3: Résumé */}
         <div>
-           <p className="font-bold text-sky-700 uppercase mb-2">Résumé</p>
-           <p className="text-slate-900 leading-relaxed">{book.summary}</p>
+           <p className="font-bold text-sky-700  mb-2">Résumé</p>
+           <p className="text-slate-900 leading-relaxed text-sm">{book.summary}</p>
         </div>
 
       </div>
