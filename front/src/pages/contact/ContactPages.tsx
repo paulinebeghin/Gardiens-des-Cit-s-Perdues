@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { sendContactMessage } from '../../api/contact';
 
-const ContactPage = () => {
+export const ContactPage = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
@@ -33,19 +33,16 @@ const ContactPage = () => {
     }
 
     return (
-        // 1. Conteneur principal : w-full pour occuper tout l'espace
+     
         <div className=" w-full items-center justify-center px-12 pb-12 border border-white rounded-[48px] max-w-5xl ">
             
-                <h1 className="text-5xl text-center text-white py-12 font-bold">Contact</h1>
-            
-            
-            {/* 2. Formulaire : w-full pour mobile, max-w pour grand écran */}
+            <h1 className="text-5xl text-center text-white py-12 font-bold">Contact</h1>
+             
             <form 
-  onSubmit={handleSubmit}
-  className="
-     flex flex-col gap-10
-  "
->
+            onSubmit={handleSubmit}
+            className="
+                flex flex-col gap-10"
+            >
                 {error && <p className="text-sm text-red-400 text-center bg-red-950/50 py-2 px-6 rounded-full">{error}</p>}
                 {success && <p className="text-sm text-green-300 text-center bg-green-950/50 py-2 px-6 rounded-full">Message envoyé avec succès !</p>}
 
@@ -85,4 +82,3 @@ const ContactPage = () => {
     )
 }
 
-export default ContactPage

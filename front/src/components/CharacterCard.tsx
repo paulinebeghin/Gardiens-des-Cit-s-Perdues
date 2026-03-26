@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-// 1. On définit la structure de la donnée attendue
 interface CharacterProps {
   character: {
     id: string;
@@ -11,12 +10,11 @@ interface CharacterProps {
   };
 }
 
-// 2. On applique le type aux arguments de la fonction
 export const CharacterCard = ({ character }: CharacterProps) => (
   <Link 
     to={`/personnage/${character.slug}`} 
-    className="group bg-white/80 rounded-2xl py-7 px-4 grid gap-5 overflow-hidden  w-50 "
-  >
+    className="group bg-white/80 rounded-2xl py-7 px-4 grid gap-5 overflow-hidden w-50 "
+>
     <div className="overflow-hidden border border-sky-700 rounded-full ">
       <img 
         src={character.imageCard} 
@@ -26,10 +24,9 @@ export const CharacterCard = ({ character }: CharacterProps) => (
     </div>
     <div className="text-sm text-center">
       <p className='font-bold text-sky-700'>Nom</p>
-      <p className="text-slate-900">
-        {character.title}
-      </p>
+      <p className="text-slate-900">{character.title}</p>
       
     </div>
   </Link>
 );
+

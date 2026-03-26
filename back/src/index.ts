@@ -1,38 +1,44 @@
-import pagesRouter from "@/routes/pages";
-import express, {Request, Response} from 'express';
+import "dotenv/config"; // Charge le .env immédiatement
+import express, { Request, Response } from 'express';
 import cors from "cors";
+import { toNodeHandler } from 'better-auth/node';
+
 import db from '@/lib/db';
+import { auth } from "./lib/auth";
+import pagesRouter from "@/routes/pages";
 import contactRouter from "@/routes/contact.route";
-import dotenv from 'dotenv';
-// On charge les variables d'environnement AVANT tout le reste
-dotenv.config();
+
 const app = express();
 const port = 3000;
 
+// 1. CORS en premier
 app.use(cors({
-    origin : "http://localhost:5173",
+    origin: "http://localhost:5173",
     credentials: true
 }));
 
+// 2. Route Auth (AVANT express.json pour éviter les conflits de lecture de flux)
+app.all("/api/auth/{*splat}", toNodeHandler(auth))
 
+// 3. Middlewares globaux pour le reste des routes
 app.use(express.json());
 
-app.get("/", (req : Request, res : Response) => {
-    res.json({
-        message : "Bienvenue sur l'API de Docknotes"
-    });
+// 4. Routes
+app.get("/", (req: Request, res: Response) => {
+    res.json({ message: "Bienvenue sur l'API de Docknotes" });
 });
 
 app.use("/api/pages", pagesRouter);
 app.use("/contact", contactRouter);
 
-
+// 5. Démarrage
 app.listen(port, async () => {
-    console.log(`Server is running on port ${port}`);
-    try{
+    console.log(`🚀 Server is running on http://localhost:${port}`);
+    try {
         await db.$connect();
-        console.log("Databe connected successfull")
-    } catch(error){
-        console.log("Database connection failed:", error)
+        console.log("✅ Database connected successfully");
+    } catch (error) {
+        console.error("❌ Database connection failed:", error);
+        process.exit(1); // Arrête le serveur si la DB est indispensable
     }
 });

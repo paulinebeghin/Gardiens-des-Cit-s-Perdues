@@ -1,33 +1,29 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   
 }
-
 datasource db {
   provider = "postgresql"
 }
 
 model Page {
   id          String   @id @default(cuid())
-  title       String   // Nom du personnage (ex: "Sophie Foster")
-  slug        String   @unique // Pour l'URL (ex: "sophie-foster")
-  category    Category // Utilisation d'un Enum pour la sécurité
+  title       String   // Nom 
+  slug        String   @unique // URL
+  category    Category // Categorie personnage
   
-  imageCard   String   // Miniature pour la grille
-  imageFull   String?  // Grande image (optionnelle)
+  imageCard   String   // IMG cards
+  imageFull   String?  // IMG page
   
-  abilities   String[]
+  abilities   String[] // Talent
   family      String[]
-  content     String[] // Un gros bloc de texte pour l'histoire
-  
+  content     String[] // histoire
+
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  userId      String   // L'ID de l'utilisateur créateur
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 enum Category {
@@ -39,3 +35,62 @@ enum Category {
   FIGURANTS_ACTIFS
 }
 
+model User {
+  id            String    @id
+  name          String
+  email         String    @unique
+  emailVerified Boolean   @default(false)
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      Session[]
+  accounts      Account[]
+  pages         Page[]
+
+  @@map("user")
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id])
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  
+
+  @@map("account")
+}
+
+model Verification {
+  id         String    @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime? @default(now())
+  updatedAt  DateTime? @updatedAt
+
+  @@map("verification")
+}

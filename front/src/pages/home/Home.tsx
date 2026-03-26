@@ -1,4 +1,4 @@
-import { CategorieImgHome } from "./CategorieHome";
+import { CategorieImgHome } from "./CategorieImgHome";
 
 
 

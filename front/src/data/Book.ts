@@ -9,7 +9,7 @@ export interface Book {
     date? : string;
   };
   
-  excerptUrl: string; // Ajoute l'URL de l'extrait ici
+  excerptUrl: string; // URL epub
   summary: string;
   coverImageCategorie: string;
   coverImage: string;
@@ -19,7 +19,7 @@ export const BOOKS_DATA: Book[] = [
   {
     id: "tome-1",
     
-    title: "Gardiens des cités perdues, Tome 1:",
+    title: "Gardiens des cités perdues, Tome 1 :",
     releaseDates: {
       grandFormat: "15/05/2014",
       poche: "16/02/2017",
@@ -33,7 +33,7 @@ export const BOOKS_DATA: Book[] = [
   {
     id: "tome-2",
     
-    title: "Gardiens des cités perdues, Tome 2:",
+    title: "Gardiens des cités perdues, Tome 2 :",
     subtitle: "Exil",
     releaseDates: {
       grandFormat: "15/01/2015",
@@ -47,7 +47,7 @@ export const BOOKS_DATA: Book[] = [
   {
       id: "tome-3",
       
-      title: "Gardiens des cités perdues, Tome 3:",
+      title: "Gardiens des cités perdues, Tome 3 :",
       subtitle: "Le Grand Brasier",
       releaseDates: {
           grandFormat: "15/11/2015",
@@ -61,7 +61,7 @@ export const BOOKS_DATA: Book[] = [
     {
       id: "tome-4",
       
-      title: "Gardiens des cités perdues, Tome 4:",
+      title: "Gardiens des cités perdues, Tome 4 :",
       subtitle: "Les Invisibles",
       releaseDates: {
         grandFormat: "02/06/2016",
@@ -76,7 +76,7 @@ export const BOOKS_DATA: Book[] = [
     {
       id: "tome-5",
       
-      title: "Gardiens des cités perdues, Tome 5:",
+      title: "Gardiens des cités perdues, Tome 5 :",
       subtitle: "Projet Polaris",
       releaseDates: {
         grandFormat: "16/02/2017",
@@ -90,7 +90,7 @@ export const BOOKS_DATA: Book[] = [
     {
         id: "tome-6",
         
-        title: "Gardiens des cités perdues, Tome 6:",
+        title: "Gardiens des cités perdues, Tome 6 :",
         subtitle: "Nocturna",
         releaseDates: {
         grandFormat: "16/11/2017",
@@ -104,7 +104,7 @@ export const BOOKS_DATA: Book[] = [
     {
       id: "tome-7",
       
-      title: "Gardiens des cités perdues, Tome 7:",
+      title: "Gardiens des cités perdues, Tome 7 :",
       subtitle: "Réminiscences",
       releaseDates: {
         grandFormat: "15/11/2018",
@@ -118,7 +118,7 @@ export const BOOKS_DATA: Book[] = [
     {
       id: "tome-8",
       
-      title: "Gardiens des cités perdues, Tome 8:",
+      title: "Gardiens des cités perdues, Tome 8 :",
       subtitle: "Héritages",
       releaseDates: {
         grandFormat: "14/11/2019",
@@ -132,7 +132,7 @@ export const BOOKS_DATA: Book[] = [
     {
       id: "tome-8.5",
       
-      title: "Gardiens des cités perdues, Tome 8.5:",
+      title: "Gardiens des cités perdues, Tome 8.5 :",
       subtitle: "Le Livre des secrets",
       releaseDates: {
         grandFormat: "19/11/2020",
@@ -146,7 +146,7 @@ export const BOOKS_DATA: Book[] = [
     {
       id: "tome-9",
       
-      title: "Gardiens des cités perdues, Tome 9:",
+      title: "Gardiens des cités perdues, Tome 9 :",
       subtitle: "Lune stellaire",
       releaseDates: {
         grandFormat: "10/11/2022",
@@ -160,7 +160,7 @@ export const BOOKS_DATA: Book[] = [
     {
       id: "tome-9.5",
       
-      title: "Gardiens des cités perdues, Tome 9.5:",
+      title: "Gardiens des cités perdues, Tome 9.5 :",
       subtitle: "Le Livre des révélations",
       releaseDates: {
         grandFormat: "10/11/2022",
@@ -174,7 +174,7 @@ export const BOOKS_DATA: Book[] = [
     {
       id: "tome-10",
       
-      title: "Gardiens des cités perdues, Tome 10:",
+      title: "Gardiens des cités perdues, Tome 10 :",
       subtitle: "Elyseus",
       releaseDates: {
         grandFormat: "Inconnu",

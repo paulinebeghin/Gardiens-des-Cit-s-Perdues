@@ -1,8 +1,6 @@
 import { Header } from "../../components/Header"
 
-
-const NotFound = () => {
-    
+export const NotFound = () => {
     return (
         // 1. Conteneur principal : w-full pour occuper tout l'espace
         <div className='flex flex-col w-full items-center justify-center px-4'>
@@ -15,4 +13,3 @@ const NotFound = () => {
     )
 }
 
-export default NotFound

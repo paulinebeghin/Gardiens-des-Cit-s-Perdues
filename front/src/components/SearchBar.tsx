@@ -1,9 +1,8 @@
 import { Search } from "lucide-react";
 
-// src/components/SearchBar.tsx
 interface SearchBarProps {
-  value: string;
-  onChange: (val: string) => void;
+  value: string; // texte recherche
+  onChange: (val: string) => void; //Met a jour le texte écrit dans la barre de recherche
 }
 
 export const SearchBar = ({ value, onChange }: SearchBarProps) => {
@@ -20,3 +19,4 @@ export const SearchBar = ({ value, onChange }: SearchBarProps) => {
     </div>
   );
 };
+

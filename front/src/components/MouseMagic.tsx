@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 
-export const MouseTrailer = () => {
+export const MouseMagic = () => {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const star = document.createElement('div');
-      star.className = 'star-particle';
+      star.className = 'Magic';
       
-      // Position de l'étoile sur la souris
+      // Position sur la souris
       star.style.left = `${e.clientX}px`;
       star.style.top = `${e.clientY}px`;
 
@@ -17,15 +17,15 @@ export const MouseTrailer = () => {
 
       document.body.appendChild(star);
 
-      // Supprimer l'élément après l'animation (1s)
+      // Suppr l'élément après l'animation (1s)
       setTimeout(() => {
         star.remove();
       }, 1000);
     };
-
+    // ordonne au navigateur d'exécuter la fonction handleMouseMove à chaque millimètre de déplacement de la souris.
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  return null; // Ce composant ne dessine rien lui-même, il injecte des divs
+  return null;
 };

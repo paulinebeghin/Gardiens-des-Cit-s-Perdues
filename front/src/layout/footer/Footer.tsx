@@ -10,13 +10,13 @@ const Footer = () => {
             <Link to="/" className="h-full"><img src="https://res.cloudinary.com/dxtfa4bcx/image/upload/v1772455462/LogoFooter_odtfgs.png" alt="" /></Link>
             <Nav style="flex flex-row justify-between flex-wrap gap-x-1 justify-center" color={true} />
             <div className="flex gap-4 0">
-                <a href="https://www.facebook.com/lecimap/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/ShannonMessengerAuthor/?locale=fr_FR" target="_blank" rel="noopener noreferrer">
                     <Facebook size={24} className="hover:text-sky-700"/>
                 </a>
-                <a href="https://www.instagram.com/christophemaffezzoni" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/sw_messenger/" target="_blank" rel="noopener noreferrer">
                     <Instagram size={24} className="hover:text-sky-700"/>
                 </a>
-                <a href="https://www.youtube.com/@pescalaslandas" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.youtube.com/@Lumeneditions/featured" target="_blank" rel="noopener noreferrer">
                     <Youtube size={24} className="hover:text-sky-700"/>
                 </a>
             </div>

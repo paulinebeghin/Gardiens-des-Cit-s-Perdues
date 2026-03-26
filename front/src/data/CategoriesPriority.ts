@@ -6,3 +6,4 @@ export const CATEGORY_PRIORITY: Record<string, number> = {
   "CONSEILS": 5,
   "FIGURANTS_ACTIFS": 6
 };
+

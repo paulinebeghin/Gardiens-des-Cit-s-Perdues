@@ -10,24 +10,26 @@ body {
   background-repeat: no-repeat;
 }
 
-.star-particle {
+.Magic{
   position: fixed;
   pointer-events: none; /* Pour ne pas bloquer les clics sur les cartes */
   background: white;
   border-radius: 50%;
-  box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  box-shadow: 0 0 10px #fff, 0 0 20px #fff; /* effet lumière */
   z-index: 9999;
   animation: fall-and-fade 2s linear forwards;
 }
-
+/* anim */
 @keyframes fall-and-fade {
+  /* base */
   0% {
     opacity: 1;
     transform: translate(0, 0) scale(1);
   }
+  /* Fin */
   100% {
     opacity: 0;
-    /* L'étoile tombe un peu et s'éloigne pour faire l'effet filant */
+    /* Gravité */
     transform: translate(-20px, 50px) scale(0);
   }
 }

@@ -29,7 +29,6 @@ return (
               src={character.imageFull || character.imageCard}
               alt={character.title}
               className="w-full h-full rounded-full object-cover"
-
             />
 
           </div>
@@ -62,14 +61,16 @@ return (
       </div>
 
       {/* Colonne Droite (Description) - prend 8 colonnes sur 12 */}
-      <div className="md:col-span-8 flex flex-col gap-5">
-        {character.content.map((p: string, i: number) => (
-          <p key={i} className="text-base leading-relaxed text-slate-900">
-            {p}
-          </p>
-        ))}
-      </div>
-
+     <div className="md:col-span-8 flex flex-col gap-5">
+            {character.content.map((p: string, i: number) => (
+              <p 
+                key={i} 
+                className="text-base leading-relaxed text-slate-900 wrap-break-word whitespace-pre-wrap"
+              >
+                {p}
+              </p>
+            ))}
+          </div>
     </div>
   </div>
 </div>
