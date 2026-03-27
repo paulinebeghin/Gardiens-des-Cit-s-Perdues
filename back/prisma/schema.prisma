@@ -47,8 +47,13 @@ model Book {
   summary     String
   imgCategory String
   img         String
-
+  category    CategoryBook
 }
+enum CategoryBook {
+  BOOK
+  BOOK_GRAPH
+}
+
 
 model User {
   id            String    @id
