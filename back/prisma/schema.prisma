@@ -36,19 +36,21 @@ enum Category {
 }
 
 model Book {
-  id          String   @id @default(cuid())
-  title       String   
-  subtitle    String
-  grandFormat String
-  poche       String
-  collector   String
-  createdAt   DateTime @default(now())
-  epubURL     String
-  summary     String
-  imgCategory String
-  img         String
-  category    CategoryBook
+  id           String        @id @default(cuid())
+  title        String
+  subtitle     String?       
+  grandFormat  String?      
+  poche        String?       
+  collector    String?       
+  createdAt    DateTime      @default(now())
+  epubURL      String?       
+  summary      String?       @db.Text
+  imgCategory  String?
+  img          String?
+  
+  category     CategoryBook
 }
+
 enum CategoryBook {
   BOOK
   BOOK_GRAPH

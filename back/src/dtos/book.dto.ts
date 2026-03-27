@@ -36,6 +36,5 @@ export const updateBookSchema = z.object({
   category: CategoryBookEnum,
 });
 
-
 export type CreateBookDto = z.infer<typeof createBookSchema>;
-export type UptadeBookDto = z.infer<typeof updateBookSchema>;
+export type UpdateBookDto = z.infer<typeof updateBookSchema>;
