@@ -7,7 +7,7 @@ import db from '@/lib/db';
 import { auth } from "./lib/auth";
 import pagesRouter from "@/routes/pages";
 import contactRouter from "@/routes/contact.route";
-
+import bookRouter from "@/routes/book.route"
 const app = express();
 const port = 3000;
 
@@ -27,7 +27,7 @@ app.use(express.json());
 app.get("/", (req: Request, res: Response) => {
     res.json({ message: "Bienvenue sur l'API de Docknotes" });
 });
-
+app.use("/book", bookRouter);
 app.use("/api/pages", pagesRouter);
 app.use("/contact", contactRouter);
 
