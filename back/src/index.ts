@@ -27,7 +27,7 @@ app.use(express.json());
 app.get("/", (req: Request, res: Response) => {
     res.json({ message: "Bienvenue sur l'API de Docknotes" });
 });
-app.use("/book", bookRouter);
+app.use("/api/book", bookRouter);
 app.use("/api/pages", pagesRouter);
 app.use("/contact", contactRouter);
 
