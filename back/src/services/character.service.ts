@@ -18,11 +18,23 @@ export const getAllCategorie = async (userId: string, search?: string) => {
     });
 };
 
-export const getCharacterBySlug = async (slug: string, userId: string) => {
+export const getAllCharacter = async (userId: string, search?: string) => {
+    return db.page.findMany({
+        where: {
+            userId: userId,
+            title: search ? {
+                contains: search,
+                mode: 'insensitive',
+            } : undefined,
+        },
+        orderBy: { title: "asc" }, 
+    });
+};
+
+export const getCharacterBySlug = async (slug: string) => {
     return await db.page.findFirst({
         where: {
             slug: slug,
-            userId: userId,
         },
     });
 };

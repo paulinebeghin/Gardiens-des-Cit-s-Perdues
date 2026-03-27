@@ -5,9 +5,11 @@ import { toNodeHandler } from 'better-auth/node';
 
 import db from '@/lib/db';
 import { auth } from "./lib/auth";
-import pagesRouter from "@/routes/pages";
 import contactRouter from "@/routes/contact.route";
-import bookRouter from "@/routes/book.route"
+import bookRouter from "@/routes/book.route";
+import characterRouter from "@/routes/character.route";
+import userRouter from "@/routes/user.route";
+
 const app = express();
 const port = 3000;
 
@@ -27,9 +29,11 @@ app.use(express.json());
 app.get("/", (req: Request, res: Response) => {
     res.json({ message: "Bienvenue sur l'API de Docknotes" });
 });
+
+app.use("/api/user", userRouter);
 app.use("/api/book", bookRouter);
-app.use("/api/pages", pagesRouter);
 app.use("/contact", contactRouter);
+app.use("/characters", characterRouter);
 
 // 5. Démarrage
 app.listen(port, async () => {

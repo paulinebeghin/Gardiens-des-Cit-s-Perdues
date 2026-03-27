@@ -53,15 +53,12 @@ const router = createBrowserRouter([
         element: <NotFound/>, 
       },
       {
-        path: "/auth", // co au dashboard
-        element: <AuthPage onAuth={function (): void {
-          throw new Error('Function not implemented.')
-        } }/>, 
+        path: "/auth",
+        element: <AuthPage onAuth={() => {}} />,
       },
       {
-        path: "/dashboard", // dashboard
-        // element: <DashBoard/>, 
-        element: <ProtectedRoute><DashBoard/></ProtectedRoute>, 
+        path: "/dashboard",
+        element: <ProtectedRoute><DashBoard/></ProtectedRoute>,
       }
     ]
   }

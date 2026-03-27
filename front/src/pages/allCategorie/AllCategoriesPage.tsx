@@ -17,7 +17,9 @@ export const AllCategoriesPage = () => {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/pages`)
+    fetch(`http://localhost:3000/characters`, {
+      credentials: "include"
+    })
       .then(res => res.json())
       .then(data => {
         // Si ton API renvoie { characters: [...] } au lieu de [...] directement :

@@ -5,7 +5,7 @@ import { Request, Response } from "express";
 export const getAll = async (req: Request, res: Response) => {
     try {
         const search = typeof req.query.title === "string" ? req.query.title : undefined;
-        const notes = await characterService.getAllCategorie(req.userId!, search);
+        const notes = await characterService.getAllCharacter(req.userId!);
         res.json(notes);
     } catch (error) {
         res.status(500).json({message : "Erreur server", error});
@@ -15,19 +15,14 @@ export const getAll = async (req: Request, res: Response) => {
 export const getBySlug = async (
   req: Request<{ slug: string }>, res: Response) => {
     try {
-        const { slug: Slug } = req.params;
-        const userId = (req as any).user?.id;
+        const { slug } = req.params;
 
-        if (!userId) {
-            return res.status(401).json({ message: "Non authentifié" });
-        }
-
-        if (!Slug) {
+        if (!slug) {
             return res.status(400).json({ message: "Slug manquant" });
         }
 
-        const character = await characterService.getCharacterBySlug(Slug, userId);
-        
+        const character = await characterService.getCharacterBySlug(slug);
+
         if (!character) {
             return res.status(404).json({ message: "Personnage introuvable" });
         }

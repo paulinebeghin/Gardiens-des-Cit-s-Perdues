@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/pages";
+const API_URL = "http://localhost:3000/characters";
 
 export const pageService = {
   // Pour la liste du Dashboard
@@ -13,15 +13,17 @@ export const pageService = {
     const response = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      credentials: "include",
       body: JSON.stringify(data),
     });
     if (!response.ok) throw new Error("Erreur lors de la création");
     return response.json();
   },
     updateBySlug: async (slug: string, updates: any) => {
-        const response = await fetch(`http://localhost:3000/api/pages/${slug}`, {
+        const response = await fetch(`http://localhost:3000/characters/${slug}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify(updates),
         });
         if (!response.ok) throw new Error("Erreur lors de la modification");
@@ -31,8 +33,8 @@ export const pageService = {
   delete: async (slug: string) => {
     const response = await fetch(`${API_URL}/${slug}`, {
       method: "DELETE",
+      credentials: "include",
     });
     if (!response.ok) throw new Error("Erreur lors de la suppression");
-    return response.json();
   }
 };

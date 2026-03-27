@@ -11,7 +11,7 @@ export const useFetchCharacter = (slug: string | undefined) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:3000/api/pages/${slug}`);
+        const response = await fetch(`http://localhost:3000/characters/${slug}`);
         if (!response.ok) throw new Error("Personnage introuvable");
         const data = await response.json();
         setCharacter(data);

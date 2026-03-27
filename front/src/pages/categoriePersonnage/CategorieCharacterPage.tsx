@@ -17,7 +17,7 @@ interface Character {
 }
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/pages/category/${catName}`)
+    fetch(`http://localhost:3000/characters/category/${catName}`)
       .then(res => res.json())
       .then(data => setCharacters(data));
   }, [catName]);

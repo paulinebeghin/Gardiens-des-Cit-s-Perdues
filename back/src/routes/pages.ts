@@ -139,7 +139,7 @@ const router: express.Router = express.Router();
 router.get("/", characterController.getAll)
 router.get("/:slug", characterController.getBySlug)
 router.patch("/:slug", authMiddleware, characterController.update)
-router.post("/", authMiddleware,  characterController.create)
+router.post("/",  characterController.create)
 router.delete("/:id", authMiddleware,  characterController.create)
 
 export default router
