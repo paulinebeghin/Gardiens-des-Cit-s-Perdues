@@ -7,7 +7,7 @@ import db from '@/lib/db';
 import { auth } from "./lib/auth";
 import contactRouter from "@/routes/contact.route";
 import bookRouter from "@/routes/book.route";
-import characterRouter from "@/routes/character.route";
+import characterRouter from "@/routes/Character.route";
 import userRouter from "@/routes/user.route";
 
 const app = express();

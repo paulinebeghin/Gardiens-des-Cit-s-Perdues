@@ -44,10 +44,12 @@ enum Category {
 model Book {
   id           String        @id @default(cuid())
   title        String
-  subtitle     String?       
+  subtitle     String?  
+  titleCategory String     
   grandFormat  String?      
   poche        String?       
-  collector    String?       
+  collector    String? 
+  graph        String?      
   createdAt    DateTime      @default(now())
   epubURL      String?       
   summary      String?       @db.Text

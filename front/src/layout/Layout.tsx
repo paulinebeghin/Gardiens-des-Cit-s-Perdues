@@ -13,7 +13,7 @@ export const Layout = () => {
         <NavBar />
       </div>
       {/* CONTENU */}
-      <main className="w-full pt-32 max-w-360">
+      <main className="w-full pt-32 max-w-[1440px]">
         <Outlet />
       </main>
 

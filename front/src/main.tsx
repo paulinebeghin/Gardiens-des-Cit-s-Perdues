@@ -12,8 +12,11 @@ import { Layout } from './layout/Layout.tsx'
 import { ContactPage } from './pages/contact/ContactPages.tsx'
 import { NotFound } from './pages/404/404NotFound.tsx'
 import { AuthPage } from './pages/auth/AuthPages.tsx'
-import { DashBoard } from './pages/dashboard/DashBoard.tsx'
+import { DashBoardCharacter } from './pages/dashboard/DashBoardCharacter.tsx'
 import { ProtectedRoute } from './ProtectedRoute.tsx'
+
+import { DashBoard } from './pages/dashboard/DashBoard.tsx'
+import { DashBoardBook } from './pages/dashboard/DashBoardBook.tsx'
 
 const router = createBrowserRouter([
   {
@@ -59,11 +62,18 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <ProtectedRoute><DashBoard/></ProtectedRoute>,
+      },
+      {
+        path: "/dashboardcharacter",
+        element: <ProtectedRoute><DashBoardCharacter/></ProtectedRoute>,
+      },
+      {
+        path: "/dashboardbook",
+        element: <DashBoardBook/>,
       }
     ]
   }
 ])
-
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
