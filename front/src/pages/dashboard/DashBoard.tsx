@@ -4,7 +4,7 @@ import { Book, Users, ArrowRight } from "lucide-react"; // Optionnel : pnpm inst
 
 export const DashBoard = () => {
     return (
-        <div className="min-h-screen w-full flex flex-col items-center">
+        <div className=" w-full flex flex-col items-center">
             <Header name={"DashBoard"} />
 
             <div className="w-full max-w-5xl px-6 py-12">
@@ -13,16 +13,16 @@ export const DashBoard = () => {
                     {/* Carte Gestion Personnages */}
                     <Link 
                         to={"/dashboardcharacter"} 
-                        className="group relative bg-white/80 backdrop-blur-md rounded-[40px] p-10 flex flex-col items-center gap-6 shadow-xl transition-all duration-500 hover:bg-sky-700 hover:-translate-y-2"
+                        className="group relative bg-white/80 rounded-[40px] p-10 flex flex-col items-center gap-6 transition-all duration-500 hover:bg-sky-700 "
                     >
-                        <div className="w-20 h-20 bg-sky-100 rounded-full flex items-center justify-center text-sky-700 group-hover:bg-white/20 group-hover:text-white transition-colors">
+                        <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-sky-700 group-hover:bg-white/20 group-hover:text-white transition-colors">
                             <Users size={40} />
                         </div>
                         <div className="text-center">
                             <h2 className="text-2xl font-bold text-sky-900 group-hover:text-white transition-colors">
                                 Gestion Personnages
                             </h2>
-                            <p className="text-slate-600 mt-2 group-hover:text-sky-100 transition-colors">
+                            <p className="text-slate-900 mt-2 group-hover:text-white transition-colors">
                                 Modifier les talents, les familles et les descriptions des héros.
                             </p>
                         </div>
@@ -34,16 +34,16 @@ export const DashBoard = () => {
                     {/* Carte Gestion Livres */}
                     <Link 
                         to={"/dashboardbook"} 
-                        className="group relative bg-white/80 backdrop-blur-md rounded-[40px] p-10 flex flex-col items-center gap-6 shadow-xl transition-all duration-500 hover:bg-sky-700 hover:-translate-y-2"
+                        className="group relative bg-white/80 rounded-[40px] p-10 flex flex-col items-center gap-6 transition-all duration-500 hover:bg-sky-700 "
                     >
-                        <div className="w-20 h-20 bg-sky-100 rounded-full flex items-center justify-center text-sky-700 group-hover:bg-white/20 group-hover:text-white transition-colors">
+                        <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-sky-700 group-hover:bg-white/20 group-hover:text-white transition-colors">
                             <Book size={40} />
                         </div>
                         <div className="text-center">
                             <h2 className="text-2xl font-bold text-sky-900 group-hover:text-white transition-colors">
                                 Gestion Livres
                             </h2>
-                            <p className="text-slate-600 mt-2 group-hover:text-sky-100 transition-colors">
+                            <p className="text-slate-900 mt-2 group-hover:text-white transition-colors ">
                                 Ajouter des tomes, modifier les résumés et les dates de sortie.
                             </p>
                         </div>

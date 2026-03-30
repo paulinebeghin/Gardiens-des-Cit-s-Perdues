@@ -21,7 +21,7 @@ const Footer = () => {
                 </a>
             </div>
             
-            <Link to="/credit" className="italic font-semibold hover:text-sky-700">Crédit</Link>
+        
             
         </footer>
     )

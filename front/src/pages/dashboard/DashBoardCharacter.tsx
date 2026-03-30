@@ -72,7 +72,7 @@ export const DashBoardCharacter = () => {
 
 return (
     <div className=" ">
-        <Header name={"DashBoard"} />
+        <Header name={"Gestion des personnages"} />
         <div className="w-full max-w-7xl  flex flex-col items-start  mb-5">
          <Link to="/dashboard" className="flex items-center gap-2 bg-white/80 text-slate-900 px-4 py-2 rounded-full text-sm font-medium hover:bg-sky-700 hover:text-white transition-all shadow-sm">
             <LayoutDashboard size={16} /> Home DashBoard
@@ -94,7 +94,7 @@ return (
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
                             placeholder="Sophie, Dex ...."
-                            className="border border-sky-700 bg-white rounded-full p-2 px-4 focus:ring-2 focus:ring-sky-500 outline-none placeholder:text-sky-300"
+                            className="border border-sky-700 bg-white rounded-full p-2 px-4 focus:ring-2 focus:ring-sky-500 outline-none placeholder:text-sky-700"
                             required
                         />
                     </div>
@@ -111,6 +111,7 @@ return (
                             <option value="CYGNE_NOIR">Cygne Noir</option>
                             <option value="CONSEILS">Conseils</option>
                             <option value="ENTOURAGE_MAJEUR">Entourage Majeur</option>
+                            <option value="FIGURANTS_ACTIFS">Figurants Actif</option>
                         </select>
                     </div>
                 </div>
@@ -161,7 +162,7 @@ return (
                 <div className="flex flex-col gap-2">
                     <label className="font-semibold text-slate-900">Description (Contenu)</label>
                     <textarea
-                        placeholder="Une phrase par ligne..."
+                        placeholder="Résumer du personnage, son histoire, ses liens avec les autres..."
                         value={content.join('\n')}
                         onChange={(e) => setcontent(e.target.value.split('\n'))}
                         className="border border-sky-700 text-sky-700 bg-white rounded-lg p-2 h-32 focus:ring-2 focus:ring-sky-500 outline-none"
@@ -210,7 +211,7 @@ return (
                             {charactersInCategory.map((p: any) => (
                                 <div 
                                     key={p.id} 
-                                    className="flex-none  snap-start border border-sky-700 p-3 flex flex-col justify-between items-center text-center gap-1.5 bg-slate-50 rounded-xl hover:border-sky-700 transition-colors shadow-sm"
+                                    className="flex-none snap-start border border-sky-700 p-3 flex flex-col justify-between items-center text-center gap-1.5 bg-slate-50 rounded-xl hover:border-sky-700 transition-colors shadow-sm"
                                 >
                                     <div className="overflow-hidden w-full">
                                         <span className="text-slate-900 font-semibold block truncate text-sm">
@@ -228,7 +229,7 @@ return (
                                     <div className="flex flex-row gap-2 w-full justify-center">
                                         <button 
                                             onClick={() => startEdit(p)} 
-                                            className="text-sky-600 hover:text-sky-800 font-medium text-[10px]   transition-colors flex-1"
+                                            className="text-sky-700 hover:text-sky-800 font-medium text-[10px]   transition-colors flex-1"
                                         >
                                             Modifier
                                         </button>
