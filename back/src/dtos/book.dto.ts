@@ -6,7 +6,6 @@ export const createBookSchema = z.object({
   title: z.string().min(1, "Le titre est obligatoire").max(100),
   subtitle: z.string().optional().nullable().default(""),
   
-  // ICI : Retire le .min(1), sinon une chaîne vide est refusée
   titleCategory: z.string().optional().default(""), 
   
   grandFormat: z.string().optional().default(""),
@@ -14,15 +13,13 @@ export const createBookSchema = z.object({
   collector: z.string().optional().default(""),
   graph:z.string().optional().default(""),
   
-  // ICI : Retire le .min(10), sinon Zod bloque si tu n'écris rien
   summary: z.string().optional().nullable().default(""),
 
   epubURL: z.string().optional().default(""),
   
-  // ICI : Retire .url() ou assure-toi que l'input n'est pas vide
   img: z.string().optional().default(""),
   
-  // ICI : Retire le .min(1)
+
   imgCategory: z.string().optional().default(""),
   
   category: CategoryBookEnum,

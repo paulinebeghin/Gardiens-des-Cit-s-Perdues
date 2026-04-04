@@ -1,4 +1,3 @@
-import { Category } from "@prisma/client";
 import { z } from "zod/v4";
 
 export const createCharacterSchema = z.object({

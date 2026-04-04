@@ -232,7 +232,7 @@ export const DashBoardBook = () => {
                 Romans ({books.filter(b => b.category === "BOOK").length})
               </h4>
               {/* Scroll dédié aux Romans */}
-              <div className="flex flex-col gap-3 overflow-y-auto max-h-[300px] scrollbar-thin scrollbar-thumb-sky-200 pr-2">
+              <div className="flex flex-col gap-3 overflow-y-auto max-h-75 scrollbar-thin scrollbar-thumb-sky-200 pr-2">
                 {books
                   .filter((b) => b.category === "BOOK")
                   .sort((a, b) => (a.titleCategory || "").localeCompare(b.titleCategory || "", undefined, { numeric: true }))
@@ -247,7 +247,7 @@ export const DashBoardBook = () => {
               </h4>
 
               {/* Scroll dédié aux Romans Graphiques */}
-              <div className="flex flex-col gap-3 overflow-y-auto max-h-[300px] scrollbar-thin scrollbar-thumb-sky-200 pr-2">
+              <div className="flex flex-col gap-3 overflow-y-auto max-h-75 scrollbar-thin scrollbar-thumb-sky-200 pr-2">
                 {books
                   .filter((b) => b.category === "BOOK_GRAPH")
                   .sort((a, b) => {

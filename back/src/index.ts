@@ -11,21 +11,18 @@ import characterRouter from "@/routes/Character.route";
 import userRouter from "@/routes/user.route";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
-// 1. CORS en premier
 app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true
+  origin: process.env.FRONTEND_URL || "http://localhost:5173",
+  credentials: true,
 }));
 
-// 2. Route Auth (AVANT express.json pour éviter les conflits de lecture de flux)
 app.all("/api/auth/{*splat}", toNodeHandler(auth))
 
-// 3. Middlewares globaux pour le reste des routes
 app.use(express.json());
 
-// 4. Routes
+
 app.get("/", (req: Request, res: Response) => {
     res.json({ message: "Bienvenue sur l'API de Docknotes" });
 });
@@ -35,7 +32,7 @@ app.use("/api/book", bookRouter);
 app.use("/contact", contactRouter);
 app.use("/characters", characterRouter);
 
-// 5. Démarrage
+
 app.listen(port, async () => {
     console.log(`🚀 Server is running on http://localhost:${port}`);
     try {

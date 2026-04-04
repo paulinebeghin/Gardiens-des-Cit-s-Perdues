@@ -10,7 +10,7 @@ export const DashBoard = () => {
             <div className="w-full max-w-5xl px-6 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     
-                    {/* Carte Gestion Personnages */}
+                    {/* Gestion Personnages */}
                     <Link 
                         to={"/dashboardcharacter"} 
                         className="group relative bg-white/80 rounded-[40px] p-10 flex flex-col items-center gap-6 transition-all duration-500 hover:bg-sky-700 "
@@ -31,7 +31,7 @@ export const DashBoard = () => {
                         </div>
                     </Link>
 
-                    {/* Carte Gestion Livres */}
+                    {/* Gestion Livres */}
                     <Link 
                         to={"/dashboardbook"} 
                         className="group relative bg-white/80 rounded-[40px] p-10 flex flex-col items-center gap-6 transition-all duration-500 hover:bg-sky-700 "
@@ -51,7 +51,6 @@ export const DashBoard = () => {
                             Accéder <ArrowRight size={18} />
                         </div>
                     </Link>
-
                 </div>
             </div>
         </div>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Header } from '../../components/Header';
-import { BOOK_GRAPH_PRIORITY, BOOK_PRIORITY } from '../../data/BookPriority';
 import type { Book } from '../../innterface/book.interface';
 import { BookItem } from '../../components/BookItem';
 

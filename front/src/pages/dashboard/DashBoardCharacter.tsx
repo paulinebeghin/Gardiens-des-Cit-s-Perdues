@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { pageService } from "../../api/pageService";
 import { CATEGORY_PRIORITY } from "../../data/CategoriesPriority";
 import { Header } from "../../components/Header";
-import { ArrowLeft, LayoutDashboard, UserCheck, UserPlus } from "lucide-react";
+import { LayoutDashboard, UserCheck, UserPlus } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const DashBoardCharacter = () => {
@@ -15,10 +15,8 @@ export const DashBoardCharacter = () => {
     const [content, setcontent] = useState<string[]>([]); 
     const [imageCard, setimageCard] = useState("");
     const [imageFull, setimageFull] = useState("");
-
     const [editingSlug, setEditingSlug] = useState<string | null>(null);
 
-    // --- ACTIONS ---
     const loadPages = async () => {
         try {
             const data = await pageService.getAll();
@@ -53,7 +51,6 @@ export const DashBoardCharacter = () => {
             await pageService.create({ ...data, slug });
         }
 
-        // Reset du form
         setTitle("");
         setabilities([]);
         setfamily([]);
@@ -201,12 +198,12 @@ return (
 
                 return (
                     <div key={cat} className="flex flex-col gap-2 ">
-                        {/* Titre de la catégorie */}
+                        {/* Titre catégorie */}
                         <h2 className="font-bold text-sky-700 uppercase tracking-wider text-xs ">
                             {cat.replace("_", " ")} ({charactersInCategory.length})
                         </h2>
 
-                        {/* Conteneur de Scroll Horizontal */}
+                        {/* Scroll */}
                         <div className="flex flex-row gap-2 overflow-x-auto pb-4 px-1 snap-x scrollbar-hide custom-scrollbar">
                             {charactersInCategory.map((p: any) => (
                                 <div 
@@ -225,7 +222,6 @@ return (
                                     {/* Trait fin */}
                                     <div className="h-px w-full bg-slate-200"></div>
 
-                                    {/* Boutons d'action */}
                                     <div className="flex flex-row gap-2 w-full justify-center">
                                         <button 
                                             onClick={() => startEdit(p)} 

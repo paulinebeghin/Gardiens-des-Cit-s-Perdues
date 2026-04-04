@@ -1,15 +1,12 @@
 import { useState, useEffect } from 'react';
 import type { Book } from '../innterface/book.interface';
 
-// Tu peux importer le type Book généré par Prisma si tu es dans le même projet
-
-
-
 export const useFetchBook = (id: string | undefined) => {
   const [book, setBook] = useState<Book | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
   useEffect(() => {
     
     if (!id) return;
@@ -19,8 +16,7 @@ export const useFetchBook = (id: string | undefined) => {
         setLoading(true);
         setError(null);
 
-        // Correction de l'URL : on utilise /api/book (ton endpoint testé sur Insomnia)
-        const response = await fetch(`http://localhost:3000/api/book/${id}`);
+        const response = await fetch(`${API_URL}/api/book/${id}`);
         
         if (!response.ok) {
           if (response.status === 404) throw new Error("Livre introuvable");
