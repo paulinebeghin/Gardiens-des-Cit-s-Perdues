@@ -10,8 +10,9 @@ export const CatalogueBook = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
+        const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
         // Appel à ton API Express/Prisma
-        const response = await fetch('http://localhost:3000/api/book'); 
+        const response = await fetch(`${API_URL}/api/book`); 
         if (!response.ok) throw new Error("Erreur réseau");
         
         const data = await response.json();

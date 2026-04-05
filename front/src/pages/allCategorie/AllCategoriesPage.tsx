@@ -17,7 +17,8 @@ export const AllCategoriesPage = () => {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:3000/characters`, {
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+    fetch(`${API_URL}/characters`, {
       credentials: "include"
     })
       .then(res => res.json())

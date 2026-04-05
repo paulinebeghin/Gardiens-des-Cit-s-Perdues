@@ -20,7 +20,7 @@ async function main() {
     }
 
     // Crée l'admin via l'API Better Auth signup pour hasher le mot de passe correctement
-    const response = await fetch("http://localhost:3000/api/auth/sign-up/email", {
+    const response = await fetch("http://localhost:8000/api/auth/sign-up/email", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

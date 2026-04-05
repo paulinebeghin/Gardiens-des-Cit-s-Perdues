@@ -15,7 +15,7 @@ export const DashBoardBook = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/book');
+      const response = await fetch('http://localhost:8000/api/book');
       const data = await response.json();
       setBooks(data);
     } catch (error) { console.error(error); } finally { setLoading(false); }
@@ -57,8 +57,8 @@ export const DashBoardBook = () => {
 
   const handleSubmit = async () => {
     const url = editingId
-      ? `http://localhost:3000/api/book/${editingId}`
-      : 'http://localhost:3000/api/book';
+      ? `http://localhost:8000/api/book/${editingId}`
+      : 'http://localhost:8000/api/book';
 
     const method = editingId ? 'PATCH' : 'POST';
 
@@ -95,7 +95,7 @@ export const DashBoardBook = () => {
 
   const handleDelete = async (id: string) => {
     if (window.confirm("Supprimer ce livre ?")) {
-      await fetch(`http://localhost:3000/api/book/${id}`, { method: 'DELETE' });
+      await fetch(`http://localhost:8000/api/book/${id}`, { method: 'DELETE' });
       setBooks(books.filter(b => b.id !== id));
     }
   };
