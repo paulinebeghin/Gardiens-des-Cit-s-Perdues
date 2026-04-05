@@ -2,7 +2,6 @@ import "dotenv/config"; // Charge le .env immédiatement
 import express, { Request, Response } from 'express';
 import cors from "cors";
 import { toNodeHandler } from 'better-auth/node';
-
 import db from '@/lib/db';
 import { auth } from "./lib/auth";
 import contactRouter from "@/routes/contact.route";
