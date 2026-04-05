@@ -6,7 +6,7 @@ import { Plus, Pencil, Trash2, LayoutDashboard, X, Save } from 'lucide-react';
 
 export const DashBoardBook = () => {
   const [books, setBooks] = useState<Book[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [, setLoading] = useState(true);
   const [editingId, setEditingId] = useState<string | null>(null);
 
   const [formData, setFormData] = useState({
