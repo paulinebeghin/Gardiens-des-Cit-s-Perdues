@@ -1,13 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { authClient } from "../../api/auth-client";
 
-interface Props {
-    onAuth: () => void;
-}
-
-export const AuthPage = ({ onAuth }: Props) => {
-    const navigate = useNavigate();
+export const AuthPage = () => {
     const [isSignUp, setIsSignUp] = useState(false);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");

@@ -53,7 +53,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/auth",
-        element: <AuthPage onAuth={() => {}} />,
+        element: <AuthPage />,
       },
       {
         path: "/dashboard",

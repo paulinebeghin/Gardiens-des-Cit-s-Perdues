@@ -12,7 +12,7 @@ export const BookItem = ({ book }: { book: Book }) => (
         
         src={book.imgCategory || book.img || "https://placehold.co/200x300?text=Pas+d'image"} 
         alt={book.title}
-        className="w-full h-full object-cover pointer-events-none aspect-[2/3]" 
+        className="w-full h-full object-cover pointer-events-none aspect-2/3" 
       />
       <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none flex items-center justify-center">
         <span className="text-white text-sm bg-slate-900/70 px-4 py-2 rounded-full ">
