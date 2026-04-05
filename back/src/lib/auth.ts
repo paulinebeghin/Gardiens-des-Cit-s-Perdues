@@ -35,7 +35,7 @@ export const auth = betterAuth({
   },
 
   baseURL: "http://localhost:3000", 
-  trustedOrigins: [process.env.FRONTEND_URL || "http://localhost:5173"],
+   trustedOrigins: [process.env.FRONTEND_URL || "http://localhost:5173"],
   advanced: {
     crossSubDomainCookies: {
       enabled: isProduction,
