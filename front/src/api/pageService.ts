@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 export const pageService = {
   // Pour la liste du Dashboard
@@ -20,7 +20,7 @@ export const pageService = {
     return response.json();
   },
     updateBySlug: async (slug: string, updates: any) => {
-        const response = await fetch(`http://localhost:3000/characters/${slug}`, {
+        const response = await fetch(`${API_URL}/characters/${slug}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
