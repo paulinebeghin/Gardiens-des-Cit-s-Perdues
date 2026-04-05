@@ -33,8 +33,8 @@ export const ContactPage = () => {
     }
 
     return (
-     
-        <div className=" w-full items-center justify-center px-12 pb-12 border border-white rounded-[48px] max-w-5xl ">
+    <div className='flex items-center justify-center py-20'>
+ <div className=" w-full  px-12 pb-12 border border-white rounded-[48px] max-w-5xl ">
             
             <h1 className="text-5xl text-center text-white py-12 font-bold">Contact</h1>
              
@@ -79,6 +79,8 @@ export const ContactPage = () => {
                 </button>
             </form>
         </div>
+    </div>
+       
     )
 }
 
