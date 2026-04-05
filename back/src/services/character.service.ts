@@ -1,7 +1,6 @@
 import type { CreateCharacterDto, UpdateCharacterDto  } from "@/dtos/Character.dto";
 import { Category } from "@prisma/client";
 import db from "@/lib/db";
-import { title } from "process";
 
 export const getAllCategorie = async (userId: string, search?: string) => {
     return db.page.findMany({
@@ -11,10 +10,10 @@ export const getAllCategorie = async (userId: string, search?: string) => {
             
             title: search ? {
                 contains: search,
-                mode: 'insensitive', // Optionnel : trouve "Sophie" même si on tape "sophie"
+                mode: 'insensitive', 
             } : undefined,
         },
-        orderBy: { title: "asc" }, // "asc" est souvent mieux pour une liste alphabétique
+        orderBy: { title: "asc" },
     });
 };
 

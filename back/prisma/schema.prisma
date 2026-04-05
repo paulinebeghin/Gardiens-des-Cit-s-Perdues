@@ -10,7 +10,7 @@ model Page {
   id          String   @id @default(cuid())
   title       String   // Nom 
   slug        String   @unique // URL
-  category    Category // Categorie personnage
+  category    Category // Categorie perso
   
   imageCard   String   // IMG cards
   imageFull   String?  // IMG page
@@ -22,11 +22,10 @@ model Page {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  userId      String   // L'ID de l'utilisateur créateur
+  userId      String  
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-// Ajout d'un rôle pour différencier les utilisateurs normaux des administrateurs
 enum Role {
   USER
   ADMIN
