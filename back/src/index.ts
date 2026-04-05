@@ -12,7 +12,7 @@ import userRouter from "@/routes/user.route";
 const app = express();
 const port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
-const allowedOrigins = ["http://localhost:5173", "http://localhost:5175", "https://gardiens-des-cit-s-perdues.vercel.app"];
+const allowedOrigins = ["http://localhost:5173", "https://gardiens-des-cit-s-perdues.vercel.app"];
 if (process.env.FRONTEND_URL) allowedOrigins.push(process.env.FRONTEND_URL);
 
 app.use(cors({
@@ -39,7 +39,6 @@ app.use("/api/user", userRouter);
 app.use("/api/book", bookRouter);
 app.use("/contact", contactRouter);
 app.use("/characters", characterRouter);
-
 
 app.listen(port, async () => {
     console.log(`🚀 Server is running on http://localhost:${port}`);
