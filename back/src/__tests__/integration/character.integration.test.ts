@@ -152,7 +152,7 @@ describe('Character Service Integration Tests', () => {
     const app = express();
     app.use(express.json());
 
-    app.get('/characters', async (req: any, res: any) => {
+    app.get('/characters', async (_req: any, res: any) => {
       try {
         const characters = await getAllCharacter('user1');
         res.json(characters);

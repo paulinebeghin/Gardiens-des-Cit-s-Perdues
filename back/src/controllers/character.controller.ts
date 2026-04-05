@@ -4,7 +4,6 @@ import { Request, Response } from "express";
 
 export const getAll = async (req: Request, res: Response) => {
     try {
-        const search = typeof req.query.title === "string" ? req.query.title : undefined;
         const notes = await characterService.getAllCharacter(req.userId!);
         res.json(notes);
     } catch (error) {

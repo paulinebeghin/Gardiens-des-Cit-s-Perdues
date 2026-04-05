@@ -1,6 +1,3 @@
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
-
 // Mock des API calls
 jest.mock('../../api/book', () => ({
   getBooks: jest.fn(),

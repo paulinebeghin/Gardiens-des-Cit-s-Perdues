@@ -135,7 +135,7 @@ describe('Book Service Integration Tests', () => {
     const app = express();
     app.use(express.json());
 
-    app.get('/books', async (req: any, res: any) => {
+    app.get('/books', async (_req: any, res: any) => {
       try {
         // Appel du service
         const books = await getAllBooks();

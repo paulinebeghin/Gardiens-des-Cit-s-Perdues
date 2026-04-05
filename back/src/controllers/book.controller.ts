@@ -2,9 +2,8 @@ import { Request, Response } from "express";
 import { createBookSchema, updateBookSchema } from "@/dtos/book.dto";
 import * as bookService from "../services/book.service"
 
-export const getAll = async (req: Request, res: Response) => {
+export const getAll = async (_req: Request, res: Response) => {
     try {
-        const search = typeof req.query.title === "string" ? req.query.title : undefined;
         const notes = await bookService.getAllBooks();
         res.json(notes);
     } catch (error) {

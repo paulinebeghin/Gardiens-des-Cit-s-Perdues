@@ -23,7 +23,7 @@ app.all("/api/auth/{*splat}", toNodeHandler(auth))
 app.use(express.json());
 
 
-app.get("/", (req: Request, res: Response) => {
+app.get("/", (_req: Request, res: Response) => {
     res.json({ message: "Bienvenue sur l'API de Docknotes" });
 });
 
