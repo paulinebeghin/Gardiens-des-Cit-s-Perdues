@@ -15,7 +15,8 @@ export const DashBoardBook = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/book');
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+      const response = await fetch(`${API_URL}/api/book`);
       const data = await response.json();
       setBooks(data);
     } catch (error) { console.error(error); } finally { setLoading(false); }
