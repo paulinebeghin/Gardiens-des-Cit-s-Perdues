@@ -14,7 +14,8 @@ export const BookDetailPage = () => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/book/${id}`);
+        const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+        const response = await fetch(`${API_URL}/api/book/${id}`);
         if (!response.ok) throw new Error("Erreur lors de la récupération");
         const data = await response.json();
         setBook(data);
