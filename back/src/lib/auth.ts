@@ -17,6 +17,7 @@ export const auth = betterAuth({
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      redirectURI: "http://localhost:8000/api/auth/callback/google",
     },
     github: {
       clientId: process.env.GITHUB_CLIENT_ID!,
@@ -25,6 +26,7 @@ export const auth = betterAuth({
   },
   trustedOrigins: [
   "http://localhost:5173",
+  "http://localhost:8000",
   "https://gardiens-des-cit-s-perdues.vercel.app",
   "https://gardiens-des-cit-s-perdues-production.up.railway.app"
 ],
