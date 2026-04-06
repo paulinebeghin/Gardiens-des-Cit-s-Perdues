@@ -14,8 +14,8 @@ export const auth = betterAuth({
   account: {
     accountLinking: {
       enabled: true,
-      // Optionnel : demande une vérification d'email avant de lier
-      // trustedProviders: ["google", "github"] 
+
+      trustedProviders: ["google", "github"] 
     }
   },
   socialProviders: {
