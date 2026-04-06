@@ -16,13 +16,7 @@ const allowedOrigins = ["http://localhost:5173", "https://gardiens-des-cit-s-per
 if (process.env.FRONTEND_URL) allowedOrigins.push(process.env.FRONTEND_URL);
 
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: process.env.FRONTEND_URL || "http://localhost:5173",
   credentials: true,
 }));
 
