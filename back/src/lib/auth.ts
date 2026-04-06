@@ -5,6 +5,8 @@ import db from "@/lib/db";
 const isProduction = process.env.NODE_ENV === "production";
 
 export const auth = betterAuth({
+  baseURL: process.env.BETTER_AUTH_URL,
+
   database: prismaAdapter(db, {
     provider: "postgresql",
   }),
@@ -22,9 +24,9 @@ export const auth = betterAuth({
     },
   },
   trustedOrigins: [
-  "http://localhost:5173",
-  "https://gardiens-des-cit-s-perdues.vercel.app"
-],
+    "http://localhost:5173",
+    "https://gardiens-des-cit-s-perdues.vercel.app"
+  ],
   advanced: {
     crossSubDomainCookies: {
       enabled: isProduction,
