@@ -15,6 +15,7 @@ console.log("- Google redirectURI:", `${baseURL}/api/auth/callback/google`);
 
 export const auth = betterAuth({
   baseURL,
+  basePath: "/api/auth",
 
   database: prismaAdapter(db, {
     provider: "postgresql",
@@ -43,6 +44,7 @@ export const auth = betterAuth({
     crossSubDomainCookies: {
       enabled: isProduction,
     },
+    useSecureCookies: isProduction,
     defaultCookieAttributes: {
       secure: isProduction,
       sameSite: isProduction ? "none" : "lax",
