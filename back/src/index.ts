@@ -25,15 +25,6 @@ app.use(cors({
 
 app.use("/api/auth", toNodeHandler(auth))
 
-// Debug middleware pour voir les requêtes auth
-app.use("/api/auth", (req, res, next) => {
-  console.log(`🔍 Auth request: ${req.method} ${req.url}`);
-  console.log(`   Host: ${req.headers.host}`);
-  console.log(`   Origin: ${req.headers.origin}`);
-  console.log(`   Referer: ${req.headers.referer}`);
-  next();
-});
-
 app.use(express.json());
 
 

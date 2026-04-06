@@ -47,7 +47,7 @@ export const AuthPage = () => {
     
     await authClient.signIn.social({
         provider,
-        callbackURL: window.location.origin + "/dashboard",
+        // callbackURL géré par Better Auth côté serveur
     });
 };
 
