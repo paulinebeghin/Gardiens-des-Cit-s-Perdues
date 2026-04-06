@@ -10,35 +10,43 @@ export const AuthPage = () => {
     const [loading, setLoading] = useState(false);
 
    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setError("");
-        setLoading(true);
+    e.preventDefault();
+    setError("");
+    setLoading(true);
 
-        if (isSignUp) {
-            const { error } = await authClient.signUp.email({
-                name,
-                email,
-                password,
-            });
-            if (error) {
-                setError(error.message || "Erreur lors de l'inscription");
+    if (isSignUp) {
+        const { error } = await authClient.signUp.email({
+            name,
+            email,
+            password,
+            callbackURL: "/dashboard", // Better Auth gère la suite
+        }, {
+            onSuccess: () => {
+                window.location.href = "/dashboard";
+            },
+            onError: (ctx) => {
+                setError(ctx.error.message || "Erreur lors de l'inscription");
                 setLoading(false);
-                return;
             }
-        } else {
-            const { error } = await authClient.signIn.email({
-                email,
-                password,
-            });
-            if (error) {
-                setError(error.message || "Erreur lors de la connexion");
+        });
+    } else {
+        await authClient.signIn.email({
+            email,
+            password,
+            callbackURL: "/dashboard",
+        }, {
+            onSuccess: () => {
+                // On utilise window.location.href pour forcer un rafraîchissement complet
+                // et être sûr que le middleware détecte le nouveau cookie
+                window.location.href = "/dashboard";
+            },
+            onError: (ctx) => {
+                setError(ctx.error.message || "Erreur de connexion");
                 setLoading(false);
-                return;
             }
-        }
-        setLoading(false);
-        window.location.href = "/dashboard"; 
-    };
+        });
+    }
+};
 
     const handleSocialSignIn = async (provider: "google" | "github") => {
     setError("");
