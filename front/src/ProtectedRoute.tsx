@@ -6,7 +6,7 @@ export const ProtectedRoute = ({ children }: { children: ReactNode }) => {
 
   // Vérifie si l'utilisateur est connecté et s'il est admin en appelant l'API /api/user/me. Si l'utilisateur n'est pas connecté ou n'est pas admin, redirige vers la page d'authentification.
   useEffect(() => {
-    fetch("http://localhost:3000/api/user/me", { credentials: "include" })
+    fetch("http://localhost:8000/api/user/me", { credentials: "include" })
       .then((res) => {
         if (!res.ok) throw new Error("Non authentifié");
         return res.json();
