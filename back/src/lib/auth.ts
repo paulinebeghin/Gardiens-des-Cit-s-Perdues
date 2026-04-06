@@ -5,10 +5,12 @@ import db from "@/lib/db";
 const isProduction = process.env.NODE_ENV === "production";
 const baseURL = process.env.BETTER_AUTH_URL || (isProduction ? "https://gardiens-des-cit-s-perdues-production.up.railway.app" : "http://localhost:8000");
 
-console.log("🔧 Better Auth Configuration:");
+console.log("🔧 Better Auth Debug:");
 console.log("- NODE_ENV:", process.env.NODE_ENV);
 console.log("- BETTER_AUTH_URL:", process.env.BETTER_AUTH_URL);
 console.log("- baseURL:", baseURL);
+console.log("- isProduction:", isProduction);
+console.log("- Google Client ID exists:", !!process.env.GOOGLE_CLIENT_ID);
 console.log("- Google redirectURI:", `${baseURL}/api/auth/callback/google`);
 
 export const auth = betterAuth({
