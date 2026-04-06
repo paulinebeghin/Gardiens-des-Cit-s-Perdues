@@ -4,7 +4,6 @@ import db from "@/lib/db";
 
 const isProduction = process.env.NODE_ENV === "production";
 
-
 export const auth = betterAuth({
   database: prismaAdapter(db, {
     provider: "postgresql",
@@ -12,17 +11,32 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
+  account: {
+    accountLinking: {
+      enabled: true,
+
+      trustedProviders: ["google", "github"] 
+    }
+  },
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     },
     github: {
-      clientId: process.env.GITHUB_CLIENT_ID!,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
-    },
+  clientId: process.env.GITHUB_CLIENT_ID!,
+  clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+  // CETTE FONCTION FORCE L'EMAIL SI GITHUB NE LE DONNE PAS
+  mapUser: (user: { email: any; id: any; }) => ({
+    ...user,
+    email: user.email || `${user.id}@github.com`,
+  }),
+},
   },
-  trustedOrigins: [process.env.FRONTEND_URL || "http://localhost:5173"],
+
+  baseURL: process.env.BETTER_AUTH_URL || "http://localhost:8000",
+  trustedOrigins: ["http://localhost:5173",                       // Pour ton dev local
+    "https://gardiens-des-cit-s-perdues.vercel.app"],
   advanced: {
     crossSubDomainCookies: {
       enabled: isProduction,
