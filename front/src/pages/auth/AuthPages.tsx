@@ -26,18 +26,25 @@ export const AuthPage = () => {
                 return;
             }
         } else {
-            const { error } = await authClient.signIn.email({
-                email,
-                password,
-            });
-            if (error) {
-                setError(error.message || "Erreur lors de la connexion");
-                setLoading(false);
-                return;
-            }
+            const { data, error } = await authClient.signIn.email({
+        email,
+        password,
+        // Better Auth peut gérer la redirection lui-même
+        callbackURL: "/dashboard", 
+    }, {
+        // C'est ici qu'on gère la suite une fois que TOUT est OK (cookie inclus)
+        onSuccess: () => {
+            window.location.href = "/dashboard";
+        },
+        onError: (ctx) => {
+            setError(ctx.error.message || "Erreur de connexion");
         }
+    });
+    
+    if (error) {
         setLoading(false);
-        window.location.href = "/dashboard"; 
+        return;
+    }}
     };
 
     const handleSocialSignIn = async (provider: "google" | "github") => {
