@@ -10,7 +10,7 @@ import characterRouter from "@/routes/Character.route";
 import userRouter from "@/routes/user.route";
 
 const app = express();
-const port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+const port = process.env.PORT ? parseInt(process.env.PORT) : 8000;
 
 const allowedOrigins = ["http://localhost:5173", "https://gardiens-des-cit-s-perdues.vercel.app"];
 if (process.env.FRONTEND_URL) allowedOrigins.push(process.env.FRONTEND_URL);
