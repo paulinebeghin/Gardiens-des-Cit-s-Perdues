@@ -19,8 +19,8 @@ async function main() {
         return;
     }
 
-    
-    const response = await fetch("http://localhost:8000/api/auth/sign-up/email", {
+    const apiUrl = process.env.BETTER_AUTH_URL || "http://localhost:8000";
+    const response = await fetch(`${apiUrl}/api/auth/sign-up/email`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

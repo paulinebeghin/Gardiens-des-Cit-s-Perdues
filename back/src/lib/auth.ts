@@ -35,7 +35,11 @@ export const auth = betterAuth({
   },
 
   baseURL: "http://localhost:8000", 
-   trustedOrigins: [process.env.FRONTEND_URL || "http://localhost:5173"],
+   trustedOrigins: [
+    "http://localhost:5173", 
+  
+    "https://gardiens-des-cit-s-perdues.vercel.app"
+],
   advanced: {
     crossSubDomainCookies: {
       enabled: isProduction,
