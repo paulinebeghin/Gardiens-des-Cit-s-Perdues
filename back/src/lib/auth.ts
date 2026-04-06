@@ -24,9 +24,10 @@ export const auth = betterAuth({
     },
   },
   trustedOrigins: [
-    "http://localhost:5173",
-    "https://gardiens-des-cit-s-perdues.vercel.app"
-  ],
+  "http://localhost:5173",
+  "https://gardiens-des-cit-s-perdues.vercel.app",
+  "https://gardiens-des-cit-s-perdues-production.up.railway.app"
+],
   advanced: {
     crossSubDomainCookies: {
       enabled: isProduction,
