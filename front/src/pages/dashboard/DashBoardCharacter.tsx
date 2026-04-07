@@ -193,7 +193,8 @@ return (
                     {/* liste perso */}
            <div className="grid grid-cols-1 w-1/3 gap-2">
                 {Object.keys(CATEGORY_PRIORITY).map((cat) => {
-                const charactersInCategory = pages.filter((p: any) => p.category === cat);
+                const safePages = Array.isArray(pages) ? pages : [];
+    const charactersInCategory = safePages.filter((p: any) => p.category === cat);
                 if (charactersInCategory.length === 0) return null;
 
                 return (
