@@ -42,13 +42,9 @@ export const AuthPage = () => {
 
     const handleSocialSignIn = async (provider: "google" | "github") => {
     setError("");
-    // On peut mettre le token AVANT de partir, ou gérer le retour
-    localStorage.setItem('userToken', 'active'); 
-    
     await authClient.signIn.social({
         provider,
-        // callbackURL géré par Better Auth côté serveur
-        
+        callbackURL: window.location.origin + "/",
     });
 };
 
