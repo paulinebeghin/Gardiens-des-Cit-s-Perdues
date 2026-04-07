@@ -42,6 +42,8 @@ export const auth = betterAuth({
       secure: isProduction,
       sameSite: isProduction ? "none" : "lax",
     },
-    redirectTo: "/dashboard",
+    redirectTo: isProduction 
+        ? "https://gardiens-des-cit-s-perdues.vercel.app/dashboard" 
+        : "http://localhost:5173/dashboard",
   },
 });
